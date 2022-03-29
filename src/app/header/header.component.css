@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway&display=swap');
+
+h1 {
+    font-family: 'Pacifico';
+    font-size: 3rem;
+}
+
+.nav-container{
+    float: right;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.menu-link{
+    font-family: 'Raleway';
+    margin-left: 2rem;
+    align-self: center;
+    justify-self: center;
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
