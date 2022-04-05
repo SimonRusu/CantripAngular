@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
+import { CardHomeComponent } from './card-home/card-home.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { CardPredefinedComponent } from './card-predefined/card-predefined.compo
     HeaderComponent,
     FooterComponent,
     CardPredefinedComponent,
+    CardHomeComponent,
 
   ],
   imports: [
