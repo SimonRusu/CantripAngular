@@ -59,4 +59,57 @@
     height: auto;
 }
 
+@media (max-width: 967px) {
+
+    #route-template{
+        grid-template-columns: repeat(1, 100%);
+        
+    }
+
+    #map-container{
+        grid-row: 1;
+        margin-bottom:2em;
+    }
+
+    .cart-btn{
+        position: relative;
+        float:none;
+        justify-self: center;
+        margin-right: unset;
+        margin-top: 3rem;
+    }
+
+    .activity-duration{
+        width: 22vw;
+        padding-left:5vw;
+
+    }
+
+    #timetable{
+
+        width: 40rem;
+    }
+
+    .route-settings-container{
+        margin-left: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+    }
+
+    .input_overlay{
+        margin-top:1rem;
+        width: 15rem !important;
+        margin-left:unset
+    }
+
+    .people-selector-container{
+        justify-content: center !important;
+        place-items: center;
+    }
+  }
+
+
 
