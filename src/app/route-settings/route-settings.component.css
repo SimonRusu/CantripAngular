@@ -1,0 +1,62 @@
+.route-settings-container{
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, fit-content(33%));
+    place-items: center;
+    margin-left: 6rem;
+}
+
+#people-selector-container{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 15rem ;
+    height: 5rem ;
+}
+
+#people-selector-container > p{
+    font-size: 2rem;
+}
+
+#people-selector-container > img{
+    width: 2rem;
+    height: auto;
+}
+
+.route-page-arrow{
+    display: grid;
+    margin-left: 1rem;
+    border: none;
+    background-color: white;
+}
+
+#arrow-number-people-image-up{
+    transform: rotate(90deg);
+    width: 2rem;
+    height: auto;
+}
+#arrow-number-people-image-down{
+    transform: rotate(-90deg);
+    width: 2rem;
+    height: auto;
+}
+
+.datetime-selector-container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    place-items: center;
+    width: 20rem !important;
+    height: 5rem !important;
+    margin-left: 2rem;
+}
+
+.datetime-selector-container > p{
+    font-size: 2rem;
+}
+
+.datetime-selector-container > img{
+    width: 2rem;
+    height: auto;
+}
+
+
