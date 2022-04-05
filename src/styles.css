@@ -49,3 +49,16 @@ html,body
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: 8rem;
 }
+
+.input_overlay_submit{
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3rem;
+    border: none;
+    font-size: 1.1rem;
+    background-color: #00B4D8;
+    color: white;
+    box-shadow: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
