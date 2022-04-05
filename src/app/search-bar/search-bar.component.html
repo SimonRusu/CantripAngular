@@ -1,0 +1,11 @@
+<div id="search-sort-container">
+    <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <input 
+            type="text" 
+            class="input_overlay" 
+            ngModel
+            name="search"
+            placeholder="search..." />
+        <button class="input_overlay_submit">Sort</button>
+    </form>
+</div>
