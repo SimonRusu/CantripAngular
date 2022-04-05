@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
 import { CardHomeComponent } from './card-home/card-home.component';
+import { CardAboutUsComponent } from './card-about-us/card-about-us.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CardHomeComponent } from './card-home/card-home.component';
     FooterComponent,
     CardPredefinedComponent,
     CardHomeComponent,
+    CardAboutUsComponent,
 
   ],
   imports: [
