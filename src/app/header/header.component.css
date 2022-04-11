@@ -5,13 +5,13 @@ h1 {
     font-size: 3rem;
 }
 
-.nav-container{
+.nav-container {
     float: right;
     display: grid;
     grid-template-columns: repeat(4, auto);
 }
 
-.menu-link{
+.menu-link {
     font-family: 'Raleway';
     margin-left: 2rem;
     align-self: center;
@@ -19,7 +19,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -28,7 +28,7 @@ ul {
     list-style-type: none;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;

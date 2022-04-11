@@ -12,6 +12,8 @@ import { RouteSettingsComponent } from './route-settings/route-settings.componen
 import { CardAboutUsComponent } from './card-about-us/card-about-us.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
+import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     RouteSettingsComponent,
     CardAboutUsComponent,
     SearchBarComponent,
+    CardPredefinedComponent,
     HomePageComponent,
+    PredefinedRoutesPageComponent,
 
   ],
   imports: [
