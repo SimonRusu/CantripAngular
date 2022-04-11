@@ -12,6 +12,7 @@ import { CardHomeComponent } from './card-home/card-home.component';
 import { RouteSettingsComponent } from './route-settings/route-settings.component';
 import { CardAboutUsComponent } from './card-about-us/card-about-us.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     RouteSettingsComponent,
     CardAboutUsComponent,
     SearchBarComponent,
+    HomePageComponent,
 
   ],
   imports: [
