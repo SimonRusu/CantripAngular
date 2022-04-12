@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -28,13 +29,15 @@ import { CardPredefinedComponent } from './card-predefined/card-predefined.compo
     CardPredefinedComponent,
     HomePageComponent,
     PredefinedRoutesPageComponent,
+    ContactUsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

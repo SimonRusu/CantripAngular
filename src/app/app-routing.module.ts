@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,6 +15,10 @@ const routes: Routes = [{
 {
   path: 'predefined-routes',
   component: PredefinedRoutesPageComponent
+},
+{
+  path: 'contact-us',
+  component: ContactUsComponent
 },
   /* path: 'predefined-routes/:id' Para ir a customized-routes*/
 ];
