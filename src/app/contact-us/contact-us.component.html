@@ -5,36 +5,99 @@
     <p>Your feedback help us to improve your experience.</p>
 </div>
 
-<form [formGroup]="form" novalidate>
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
     <div class="container mt-5">
-        <form class="row g-3 ">
-        <div class="col-md-6 mx-auto borderStyle">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control validation-text" id="firstName" required>
+        <div class="row g-3 ">
+            <div class="col-md-6 mx-auto borderStyle">
+
+                
+
+                <label for="first-name" class="form-label">First Name</label>
+                <input type="text" class="form-control validation-text" id="first-name" formControlName="firstName"
+                [class.valid]="form.get('firstName')?.valid && 
+                (form.get('firstName')?.dirty || form.get('firstName')?.touched)"
+                [class.invalid]="form.get('firstName')?.invalid && 
+                (form.get('firstName')?.dirty || form.get('firstName')?.touched)"/> 
+                
+                <div *ngIf="form.get('firstName')?.invalid && 
+                    form.get('firstName')?.errors && 
+                    (form.get('firstName')?.dirty || form.get('firstName')?.touched)">
+
+                    <small class="text-danger"
+                        *ngIf="form.get('firstName')?.hasError('required')">
+                        First Name is required.
+                    </small>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6 mx-auto borderStyle">
+                <label for="last-name" class="form-label">Last Name</label>
+                <input type="text" class="form-control validation-text" id="last-name" formControlName="lastName"
+                [class.valid]="form.get('lastName')?.valid && 
+                (form.get('lastName')?.dirty || form.get('lastName')?.touched)"
+                [class.invalid]="form.get('lastName')?.invalid && 
+                (form.get('lastName')?.dirty || form.get('lastName')?.touched)"/>
+
+                <div *ngIf="form.get('lastName')?.invalid && 
+                    form.get('lastName')?.errors && 
+                    (form.get('lastName')?.dirty || form.get('lastName')?.touched)">
+
+                    <small class="text-danger"
+                        *ngIf="form.get('lastName')?.hasError('required')">
+                        Last Name is required.
+                    </small>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6 mx-auto borderStyle">
+                <label for="email-info" class="form-label">E-mail</label>
+                <input type="email" class="form-control validation-text" id="email-info" formControlName="email"
+                [class.valid]="form.get('email')?.valid && 
+                (form.get('email')?.dirty || form.get('email')?.touched)"
+                [class.invalid]="form.get('email')?.invalid && 
+                (form.get('email')?.dirty || form.get('email')?.touched)"/>
+
+                <div *ngIf="form.get('email')?.invalid && 
+                    form.get('email')?.errors && 
+                    (form.get('email')?.dirty || form.get('email')?.touched)">
+
+                    <small class="text-danger"
+                        *ngIf="form.get('email')">
+                        A valid E-mail is required.
+                    </small>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6 mx-auto borderStyle">
+                <label for="phone-number" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phone-number" formControlName="phoneNumber"/>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6 mx-auto borderStyle">
+                <label id="message-text" class="form-label">Message</label>
+                <textarea class="form-control validation-text" id="message-text" rows="3" formControlName="messageText"
+                [class.valid]="form.get('messageText')?.valid && 
+                (form.get('messageText')?.dirty || form.get('messageText')?.touched)"
+                [class.invalid]="form.get('messageText')?.invalid && 
+                (form.get('messageText')?.dirty || form.get('messageText')?.touched)"></textarea>
+
+                <div *ngIf="form.get('messageText')?.invalid && 
+                    form.get('messageText')?.errors && 
+                    (form.get('messageText')?.dirty || form.get('messageText')?.touched)">
+
+                    <small class="text-danger"
+                        *ngIf="form.get('messageText')?.hasError('required')">
+                        Message is required.
+                    </small>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" [disabled]="!(form.valid && form.dirty)" disabled>Submit request</button>
+            </div>
         </div>
-        <div class="w-100"></div>
-        <div class="col-md-6 mx-auto borderStyle">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control validation-text" id="lastName" required>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-md-6 mx-auto borderStyle">
-            <label for="emailInfo" class="form-label">E-mail</label>
-            <input type="email" class="form-control validation-text" id="emailInfo" required>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-md-6 mx-auto borderStyle">
-            <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" id="phoneNumber">
-        </div>
-        <div class="w-100"></div>
-        <div class="col-md-6 mx-auto borderStyle">
-            <label id="message" class="form-label">Message</label>
-            <textarea class="form-control validation-text" id="comments" rows="3" required></textarea>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        </form>
     </div>
 </form>

@@ -14,3 +14,11 @@
 {
     margin-bottom: 11rem;
 }
+
+.valid{
+    outline: greenyellow solid 1px;
+}
+
+.invalid{
+    outline: indianred solid 1px;
+}
