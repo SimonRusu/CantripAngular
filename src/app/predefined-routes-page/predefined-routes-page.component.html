@@ -9,7 +9,8 @@
   <div *ngFor="let predefinedRoute of predefinedRoutes | async">
 
     <app-card-predefined [numberOfPeople]="predefinedRoute.numberOfPeople" [price]="predefinedRoute.price"
-                       [routeName]="predefinedRoute.routeName" [thumbnailPath]="predefinedRoute.thumbnailPath">
+                         [routeName]="predefinedRoute.routeName" [thumbnailPath]="predefinedRoute.thumbnailPath"
+                         [routeId]="predefinedRoute.routeId">
 
     </app-card-predefined>
 

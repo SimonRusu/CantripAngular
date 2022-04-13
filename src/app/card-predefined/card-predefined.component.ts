@@ -10,6 +10,7 @@ export class CardPredefinedComponent implements OnInit {
   @Input() price !: number;
   @Input() thumbnailPath !: string;
   @Input() routeName !: string;
+  @Input() routeId !: number;
   constructor() {
   }
 

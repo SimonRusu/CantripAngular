@@ -1,5 +1,4 @@
-{
-  "activities": [
+[
     {
       "activityName": "Visit Soco Negro",
       "activityId": 1,
@@ -120,5 +119,4 @@
       "timeDuration": 1,
       "maxConcurrentActivities": 1
     }
-  ]
-}
+]
