@@ -15,6 +15,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AlertModalComponent } from './alert-modal/alert-modal.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,16 +34,21 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     HomePageComponent,
     PredefinedRoutesPageComponent,
     ContactUsComponent,
-
+    AlertModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
+  ],
+  exports: [
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
