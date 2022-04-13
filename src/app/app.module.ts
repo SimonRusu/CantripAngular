@@ -19,6 +19,9 @@ import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { PasswordPageComponent } from './password-page/password-page.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PredefinedRoutesPageComponent,
     ContactUsComponent,
     AlertModalComponent,
+    RegisterPageComponent,
+    LoginPageComponent,
+    PasswordPageComponent,
   ],
   imports: [
     BrowserModule,

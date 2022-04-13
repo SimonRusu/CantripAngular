@@ -72,3 +72,12 @@ html,body
 .material-icons.md-72 { font-size: 72px; }
 
 .material-icons.green { color: #357960; }
+
+.valid{
+    outline: greenyellow solid 1px;
+    
+}
+
+.invalid{
+    outline: indianred solid 1px;
+}

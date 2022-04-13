@@ -1,0 +1,29 @@
+<div class="text-center">
+    <h1 class=" mt-5 mb-5">Login into your account!</h1>
+<div>
+
+    <form class="formContainer" [formGroup]="loginForm"  novalidate (ngSubmit)="checkEmail()">
+        <div class="mx-auto">
+            <input type="email" name="emailLogin" class="input_overlay validation-text" placeholder="enter your email" formControlName="email"
+            [class.valid]="loginForm.get('email')?.valid && 
+            (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+            [class.invalid]="loginForm.get('email')?.invalid && 
+            (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"/>
+            
+            <div class="" *ngIf="loginForm.get('email')?.invalid && 
+                loginForm.get('email')?.errors && 
+                (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+
+                <small class="text-danger"
+                    *ngIf="loginForm.get('email')">
+                    A valid email is required.
+                </small>
+            </div>
+        </div>
+        
+        <br>
+        
+        <button type="submit" class="btn btn-primary" value="Continue"[disabled]="!(loginForm.valid && loginForm.dirty)" disabled>Continue</button>
+        
+    </form>
+</div>
