@@ -1,10 +1,13 @@
-<div href="routePage.html" class="card" id="">
-    <article>
-        <p>Routa 1</p>
-        <img class="outstanding-routes-img" src="#" alt="">
-        <div class="route-info">
-            <p><img class="user-icon" src="../media/user-icon.png"></p>
-            <p></p>
-        </div>
-    </article>
+<div routerLink="" >
+  <article class="cardCanTrip">
+
+    <p>{{routeName}}</p>
+    <img class="outstanding-routes-img" [src]="thumbnailPath" alt="">
+    <div class="route-info">
+      <p> {{numberOfPeople}}<img class="user-icon" src="assets/media/user-icon.png"></p>
+      <p>{{price | currency}}</p>
+    </div>
+
+  </article>
 </div>
+

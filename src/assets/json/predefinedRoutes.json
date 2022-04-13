@@ -1,11 +1,10 @@
-{
-  "routes": [
+[
     {
       "routeId":1,
       "routeName": "Route through Tejeda",
       "numberOfPeople": 4,
       "price": 10,
-      "thumbnailPath": "../media/predefinedRoutesImages/tejeda01.jpg",
+      "thumbnailPath": "/assets/media/predefinedRoutesImages/tejeda01.jpg",
       "dateAvailability": [
         "15/03/2022",
         "31/12/2022"
@@ -22,7 +21,7 @@
       "routeName": "Route through Arinaga",
       "numberOfPeople": 3,
       "price": 10,
-      "thumbnailPath": "../media/predefinedRoutesImages/arinaga01.jpg",
+      "thumbnailPath": "/assets/media/predefinedRoutesImages/arinaga01.jpg",
       "dateAvailability": [
         "08/04/2022",
         "31/12/2022"
@@ -36,10 +35,10 @@
     },
     {
       "routeId":3,
-      "routeName": "Acuatic route through Maspalomas",
+      "routeName": "Acuatic route South",
       "numberOfPeople": 4,
       "price": 30,
-      "thumbnailPath": "../media/predefinedRoutesImages/maspalomas_acuatico01.JPG",
+      "thumbnailPath": "/assets/media/predefinedRoutesImages/maspalomas_acuatico01.JPG",
       "dateAvailability": [
         "08/03/2022",
         "31/12/2022"
@@ -52,5 +51,5 @@
       "startTime": "11:00"
     }
 
-  ]
-}
+]
+
