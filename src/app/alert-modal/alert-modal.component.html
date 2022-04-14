@@ -3,7 +3,7 @@
     <mat-dialog-content>
       <p>{{dialogText}}</p>      
     </mat-dialog-content>
-    <span class="material-icons md-72 green">task_alt</span>
+    <span class="material-icons md-72 {{dialogIconColor}} ">{{dialogIcon}}</span>
         
     <mat-dialog-actions align="center">
         <button class="btn btn-primary " matDialogClose="true" (click)="closeDialog()">Accept</button>

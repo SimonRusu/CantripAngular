@@ -1,9 +1,10 @@
-<div class="text-center">
-    <h1 class=" mt-5 mb-5">Join Us!</h1>
-<div>
+<div class="col-md-3 col-sm-6  mx-auto">
+
+    <h1 class=" text-center mt-5 mb-5">Join Us!</h1>
+
 
     <form class="formContainer" [formGroup]="registerForm"  novalidate (ngSubmit)="registerUser()">
-        <div class="mx-auto">
+
             <input type="password" name="passwordLogin" class="input_overlay validation-text" placeholder="enter your password" formControlName="password"
             [class.valid]="registerForm.get('password')?.valid && 
             (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
@@ -21,31 +22,30 @@
 
                 <small class="text-danger"
                     *ngIf="registerForm.get('password')?.hasError('pattern')">
-                    Must contain at least one number and one uppercase and lowercase letter,
-                    and at least 8 or more characters.
+                        Password must contain at least one number,
+                        one uppercase and lowercase letter,
+                         one special character and at least 8 or more characters.
+                    
                 </small>
             </div>
 
             <div class="w-100 mb-4"></div>
-
-            <input type="password" name="passwordLogin" class="input_overlay validation-text" placeholder="enter your password" formControlName="confirmPassword"
-            [class.valid]="registerForm.get('confirmPassword')?.valid && 
-            (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)"
-            [class.invalid]="registerForm.hasError('notSame')"/>
-            <div>
-                <small class="text-danger"
-                    *ngIf="registerForm.hasError('notSame')">
-                    Passwords do not match
-                </small>
-            </div>
             
+                <input type="password" name="passwordLogin" class="input_overlay validation-text" placeholder="repeat your password" formControlName="confirmPassword"
+                [class.valid]="registerForm.get('confirmPassword')?.valid && registerForm.get('password')?.valid &&
+                (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)"
+                [class.invalid]="registerForm.hasError('notSame') && registerForm.get('confirmPassword')?.dirty"/>
+                <div>
+                    <small class="text-danger"
+                        *ngIf="registerForm.hasError('notSame') && registerForm.get('confirmPassword')?.dirty">
+                        Passwords do not match
+                    </small>
+                </div>
             
-        </div>
-        
-
         <br>
-        
-        <button type="submit" class="btn btn-primary" value="Continue"[disabled]="!(registerForm.valid && registerForm.dirty)" disabled>Register</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" value="Continue"[disabled]="!(registerForm.valid && registerForm.dirty)" disabled>Register</button>
+        </div>
         
     </form>
 </div>

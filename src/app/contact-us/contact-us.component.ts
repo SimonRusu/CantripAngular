@@ -28,7 +28,9 @@ export class ContactUsComponent implements OnInit {
   openDialog(): void{
     const dialogRef = this.dialog.open(AlertModalComponent,
        {data: {dialogTitle: "Thank you for contacting us!",
-        dialogText: "Your request has been submitted succesfully"}});
+        dialogText: "Your request has been submitted succesfully",
+        dialogIcon: "task_alt",
+        dialogIconColor: "green"}});
     console.log(this.form.value);
   }
 

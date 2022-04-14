@@ -23,7 +23,7 @@ export class PasswordPageComponent implements OnInit {
     })
   }
 
-  checkEmail(): void{
+  checkPassword(): void{
     console.log(this.passwordForm.value);
     this.navigateTo();
   }

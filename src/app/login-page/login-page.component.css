@@ -1,6 +1,9 @@
-.formContainer > button{
+.formContainer > div > button{
     width: 10rem;
     height: 3rem;
-    margin-bottom: 21.5vw;
+    margin-bottom: 17vw;
 }
 
+form > .input_overlay{
+    width: 100%;
+}

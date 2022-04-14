@@ -10,6 +10,8 @@ export class AlertModalComponent implements OnInit {
 
   public dialogTitle: String;
   public dialogText: String;
+  public dialogIcon: String;
+  public dialogIconColor: String
 
   constructor(
     public dialogRef: MatDialogRef<AlertModalComponent>,
@@ -18,6 +20,8 @@ export class AlertModalComponent implements OnInit {
   ngOnInit(): void {
     this.dialogTitle = this.data.dialogTitle;
     this.dialogText = this.data.dialogText;
+    this.dialogIcon = this.data.dialogIcon;
+    this.dialogIconColor = this.data.dialogIconColor;
   }
 
   closeDialog(): void {
