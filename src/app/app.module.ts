@@ -24,6 +24,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PasswordPageComponent } from './password-page/password-page.component';
 import { RoutePageComponent } from './route-page/route-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { RoutePageComponent } from './route-page/route-page.component';
     LoginPageComponent,
     PasswordPageComponent,
     RoutePageComponent,
+    ProfilePageComponent,
 
   ],
   imports: [

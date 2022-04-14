@@ -7,6 +7,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PasswordPageComponent } from './password-page/password-page.component';
 import {RoutePageComponent} from "./route-page/route-page.component";
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const routes: Routes = [{
   path: '',
@@ -40,6 +41,10 @@ const routes: Routes = [{
   /* path: 'predefined-routes/:id' Para ir a customized-routes*/
   path: 'route-page/:routeId',
   component: RoutePageComponent
+},
+{
+  path: 'profile',
+  component: ProfilePageComponent
 }
 ];
 
