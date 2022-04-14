@@ -31,7 +31,8 @@ html,body
     padding-right: 0.5rem;
 }
 
-.card{
+
+.cardCanTrip{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 2rem;
     width: 22rem;
@@ -49,6 +50,7 @@ html,body
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: 8rem;
+    justify-items: center;
 }
 
 .input_overlay_submit{
@@ -64,6 +66,7 @@ html,body
     padding-right: 0.5rem;
 }
 
+<<<<<<< HEAD
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -81,3 +84,34 @@ html,body
 .invalid{
     outline: indianred solid 1px;
 }
+=======
+@media (max-width: 1099px) {
+  /*tablet landscape*/
+  .cardCanTrip{
+    width: 15rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 767px){
+  /* Tablet portrait*/
+  .cardCanTrip{
+    width: 11rem;
+    height: 18rem;
+    padding-bottom: 0.5rem;
+  }
+}
+@media (max-width: 575px) {
+  /* Mobile portrait*/
+  .outstanding-routes-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardCanTrip{
+    width: 20rem;
+    height: 25rem;
+    margin-bottom: 3rem;
+  }
+}
+>>>>>>> f45e19c4528cb1264ef1b25124392a8d17eeffc9

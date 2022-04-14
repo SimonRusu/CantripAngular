@@ -1,0 +1,124 @@
+{
+  "activities": [
+    {
+      "activityName": "Visit Soco Negro",
+      "activityId": 1,
+      "numberOfPeople": 1,
+      "price": 2,
+      "activityType": "swim",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "14:00",
+        "15:00",
+        "17:00",
+        "18:00"
+      ],
+      "timeDuration": 2,
+      "maxConcurrentActivities": 2
+    },
+    {
+      "activityName": "Boat Trip",
+      "activityId": 2,
+      "numberOfPeople": 1,
+      "price": 2,
+      "activityType": "swim",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "16:00",
+        "17:00"
+      ],
+      "timeDuration": 2,
+      "maxConcurrentActivities": 2
+    },
+    {
+      "activityName": "Visit Mirador Risco Verde",
+      "activityId": 3,
+      "numberOfPeople": 2,
+      "price": 2,
+      "activityType": "landscape",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "18:00",
+        "19:00",
+        "20:00",
+        "22:00"
+      ],
+      "timeDuration": 1,
+      "maxConcurrentActivities": 4
+    },
+    {
+      "activityName": "Walk through the dunes",
+      "activityId": 4,
+      "numberOfPeople": 1,
+      "price": 2,
+      "activityType": "trekking",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "09:00",
+        "10:00",
+        "11:00",
+        "13:00",
+        "16:00",
+        "17:00"
+      ],
+      "timeDuration": 1,
+      "maxConcurrentActivities": 1
+    },
+    {
+      "activityName": "Visit Historic Center of Tejeda",
+      "activityId": 5,
+      "numberOfPeople": 1,
+      "price": 2,
+      "activityType": "museum",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "08:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "16:00",
+        "17:00"
+      ],
+      "timeDuration": 1,
+      "maxConcurrentActivities": 1
+    },
+    {
+      "activityName": "Medicinal Plants Center Tejeda",
+      "activityId": 6,
+      "numberOfPeople": 1,
+      "price": 3,
+      "activityType": "museum",
+      "dateAvailability": [
+        "01/01/2022",
+        "31/12/2022"
+      ],
+      "timeAvailability": [
+        "11:00",
+        "12:00",
+        "16:00",
+        "17:00"
+      ],
+      "timeDuration": 1,
+      "maxConcurrentActivities": 1
+    }
+  ]
+}
