@@ -83,6 +83,12 @@ html,body
 .invalid{
     outline: indianred solid 1px;
 }
+
+.footer-margin{
+  margin-bottom:10vw;
+}
+
+
 @media (max-width: 1099px) {
   /*tablet landscape*/
   .cardCanTrip{
