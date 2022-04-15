@@ -5,9 +5,11 @@
 }
 
 .outstanding-routes-img{
-    margin-top: 0 !important;
-    width: 90% !important;
+    margin-top: 0;
+    width: 90%;
+    height: 80%;
     object-fit: cover;
+    border-radius: 0.5rem;
 }
 
 .user-icon{
@@ -15,3 +17,4 @@
     height: auto;
     margin-left: 0.5rem;
 }
+

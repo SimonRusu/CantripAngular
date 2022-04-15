@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-predefined',
@@ -6,9 +6,11 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./card-predefined.component.css']
 })
 export class CardPredefinedComponent implements OnInit {
-  type: string;
+  @Input() numberOfPeople !: number;
+  @Input() price !: number;
+  @Input() thumbnailPath !: string;
+  @Input() routeName !: string;
   constructor() {
-    this.type = 'predefined';
   }
 
   ngOnInit(): void {

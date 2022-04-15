@@ -1,12 +1,9 @@
 footer{
-    width: 100%;
-    position:absolute;
-    bottom:0;
     background-color: #ffcb69;
 }
 
 .social-logo{
-    width: 2.5rem;
+    width: 2rem;
     height: auto;
 
 }

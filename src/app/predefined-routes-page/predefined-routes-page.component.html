@@ -4,4 +4,19 @@
         <app-search-bar></app-search-bar>
     </div>
 </section>
-<app-card-predefined></app-card-predefined>
+
+<section class="outstanding-routes-container">
+  <div *ngFor="let predefinedRoute of predefinedRoutes | async">
+
+    <app-card-predefined [numberOfPeople]="predefinedRoute.numberOfPeople" [price]="predefinedRoute.price"
+                       [routeName]="predefinedRoute.routeName" [thumbnailPath]="predefinedRoute.thumbnailPath">
+
+    </app-card-predefined>
+
+  </div>
+
+  <div class="w-100 footer-margin"></div>
+
+
+</section>
+
