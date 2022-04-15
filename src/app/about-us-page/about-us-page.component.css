@@ -1,0 +1,69 @@
+
+.outstanding-routes-container > .card{
+    padding: 0;
+    width: 24rem;
+}
+
+.about-us-container{
+    text-align: center;
+
+}
+
+.card > .outstanding-routes-img{
+    margin-top: 1.5rem;
+    height: 24rem;
+    margin-bottom: 0.5rem;
+}
+
+.card > p{
+    font-size: 85%;
+    line-height: 1rem;
+}
+
+@media (max-width: 1099px){
+    .about-us-container > p{
+        margin: 1rem;
+    }
+    .card > p{
+        font-size: 70%;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px){
+
+    .about-us-container > p{
+        margin: 0;
+    }
+    .outstanding-routes-container > .card{
+        width: 30vw;
+    }
+    .card > .outstanding-routes-img{
+        width: 25vw;
+    }
+    .card > p{
+        font-size: 80%;
+    }
+}
+
+
+@media(max-width: 575px){
+    #chief-container{
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #chief-container > .card{
+        width: 24rem;
+        margin-bottom: 3rem;
+    }
+
+    #chief-container > .card > .outstanding-routes-img{
+        width: 20rem;
+    }
+
+
+
+}
