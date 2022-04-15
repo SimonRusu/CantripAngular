@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {Route} from "./route-page/route-page.component";
+import {tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,4 @@ export class RouteService {
   getPredefinedRoutes(){
     return this.http.get<Route[]>('/assets/json/predefinedRoutes.json');
   }
-
 }

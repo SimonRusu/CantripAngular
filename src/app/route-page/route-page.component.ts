@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 
 import {ActivityService} from "../activity.service";
 import {RouteService} from "../route.service";
-import {forkJoin, Observable} from 'rxjs';
+import {map} from "rxjs";
 
 export interface Route{
   routeId: number;
@@ -26,36 +26,28 @@ export interface Route{
 })
 export class RoutePageComponent implements OnInit {
 
-  routes = this.routeService.getPredefinedRoutes();
+  predefinedRoutes = this.routeService.getPredefinedRoutes();
   activities = this.activityService.getActivities();
-  routesList: Route[] = [];
-  routeInfo !: Route ;
+
+  routeParams = this.route.snapshot.paramMap;
+  routeIdFromRoute !: number;
 
 
   constructor(private route: ActivatedRoute, private activityService: ActivityService, private routeService: RouteService) {
-    this.getRoute();
-    console.log(this.routeInfo);
+
+    this.routeIdFromRoute = Number(this.routeParams.get('routeId'));
   }
 
   ngOnInit(): void {
 
   }
 
-
-
-   getRoute() {
-    const routeParams = this.route.snapshot.paramMap;
-    const routeIdFromRoute = Number(routeParams.get('routeId'));
-
-    this.routes.subscribe(data => data.forEach(x => {
-      if(x.routeId == routeIdFromRoute){
-        this.routeInfo = x;
-      }
-
-      console.log(this.routeInfo);
-
-    }));
-
+  checkRoute(route: Route ): boolean{
+    if(route.routeId == this.routeIdFromRoute){
+      return true;
+    } else{
+      return false;
+    }
   }
 
 }

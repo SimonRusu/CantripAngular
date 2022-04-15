@@ -1,2 +1,5 @@
-<div>
+<div *ngFor="let predefinedRoute of predefinedRoutes | async">
+  <div *ngIf="checkRoute(predefinedRoute)">
+    <p>esto es una prueba {{predefinedRoute.routeName}}</p>
+  </div>
 </div>
