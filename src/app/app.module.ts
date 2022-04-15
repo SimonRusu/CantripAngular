@@ -14,6 +14,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CardPredefinedComponent } from './card-predefined/card-predefined.compo
     CardPredefinedComponent,
     HomePageComponent,
     PredefinedRoutesPageComponent,
+    CarouselComponent,
 
   ],
   imports: [
