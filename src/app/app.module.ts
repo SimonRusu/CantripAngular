@@ -15,10 +15,11 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PredefinedRoutesPageComponent } from './predefined-routes-page/predefined-routes-page.component';
 import { CardPredefinedComponent } from './card-predefined/card-predefined.component';
+import { CarouselComponent } from './carousel/carousel.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -40,6 +41,7 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
     CardPredefinedComponent,
     HomePageComponent,
     PredefinedRoutesPageComponent,
+    CarouselComponent,
     ContactUsComponent,
     AlertModalComponent,
     RegisterPageComponent,
