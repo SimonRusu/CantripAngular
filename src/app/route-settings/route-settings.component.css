@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3, fit-content(33%));
     place-items: center;
-    margin-left: 6rem;
+    margin-left: 2rem;
 }
 
 #people-selector-container{

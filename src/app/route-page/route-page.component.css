@@ -1,0 +1,19 @@
+.cart-btn-container{
+    position: absolute;
+    top: 40rem;
+    right: 5rem;
+}
+
+.cart-btn{
+    border:none;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    background-color: #00B4D8;
+}
+
+#cart-img{
+    width: 3rem;
+    height: auto;
+
+}
