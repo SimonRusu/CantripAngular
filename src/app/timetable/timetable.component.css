@@ -1,0 +1,48 @@
+#timetable{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 30rem;
+    width: 45rem;
+    border-radius: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+    overflow:scroll;
+    overflow-x:hidden;
+    
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.exact-hour-container{
+    display: grid;
+}
+
+.exact-hour{
+    background-color: #ffcb69;
+    border-radius: 1rem;
+    width: 5rem;
+    padding: 0.8rem;
+    justify-self: center;
+    text-align: center;
+}
+
+.activity-container{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    place-items: center;
+    margin: 2rem 0;
+}
+
+.activity-duration{
+    width: 17vw;
+    padding-left:3vw;
+}
+
+.delete-btn{
+    border: none;
+    background-color: white;
+}
+

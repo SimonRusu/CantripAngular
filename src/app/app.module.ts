@@ -28,6 +28,7 @@ import { RoutePageComponent } from './route-page/route-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { MapComponent } from './map/map.component';
+import { TimetableComponent } from './timetable/timetable.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MapComponent } from './map/map.component';
     AboutUsPageComponent,
     MapComponent,
 
+    TimetableComponent
   ],
   imports: [
     BrowserModule,
