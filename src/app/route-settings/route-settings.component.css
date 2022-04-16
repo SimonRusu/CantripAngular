@@ -1,5 +1,5 @@
 .route-settings-container{
-    margin-top: 7rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(3, fit-content(33%));
     place-items: center;
@@ -10,34 +10,35 @@
     display: flex;
     place-items: center;
     justify-content: center;
-    width: 15rem ;
-    height: 5rem ;
+    width: 10rem ;
+    height: 3.5rem ;
 }
 
 #people-selector-container > p{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
 }
 
 #people-selector-container > img{
-    width: 2rem;
+    width: 1.5rem;
     height: auto;
 }
 
 .route-page-arrow{
     display: grid;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border: none;
     background-color: white;
 }
 
 #arrow-number-people-image-up{
     transform: rotate(90deg);
-    width: 2rem;
+    width: 1rem;
     height: auto;
 }
 #arrow-number-people-image-down{
     transform: rotate(-90deg);
-    width: 2rem;
+    width: 1rem;
     height: auto;
 }
 
@@ -45,17 +46,18 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     place-items: center;
-    width: 20rem !important;
-    height: 5rem !important;
+    width: 13rem !important;
+    height: 3.5rem !important;
     margin-left: 2rem;
 }
 
 .datetime-selector-container > p{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top:0.5rem;
 }
 
 .datetime-selector-container > img{
-    width: 2rem;
+    width: 1.5rem;
     height: auto;
 }
 
