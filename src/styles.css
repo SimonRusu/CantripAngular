@@ -98,6 +98,10 @@ html,body
     height: 18rem;
     padding-bottom: 0.5rem;
   }
+
+  .cardCanTrip > p{
+    font-size: 0.9rem;
+  }
 }
 @media (max-width: 575px) {
   /* Mobile portrait*/
@@ -110,5 +114,9 @@ html,body
     width: 20rem;
     height: 25rem;
     margin-bottom: 3rem;
+  }
+
+  .cardCanTrip > p{
+    font-size: 1rem;
   }
 }
