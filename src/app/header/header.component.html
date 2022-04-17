@@ -1,11 +1,25 @@
 <header>
     <a routerLink="/home"><h1>CanTrip</h1></a>
     <nav>
-        <ul class="nav-container">
+        <ul class="nav-container menu">
             <li><a routerLink="/predefined-routes" class="menu-link">Search routes</a></li>
             <li><a routerLink="/login" class="menu-link">Login</a></li>
             <li><a routerLink="/about-us" class="menu-link">About us</a></li>
             <li><a routerLink="/contact-us" class="menu-link">Contact us</a></li>
         </ul>
     </nav>
+
+    <div class="dropdown burger-menu">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./assets/media/menu.png">
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" routerLink="/home">Cantrip</a>
+                <a class="dropdown-item" routerLink="/predefinedRoute">Search routes</a>
+                <a class="dropdown-item" routeLink="/login">Login</a>
+                <a class="dropdown-item" routerLink="/aboutUs">About us</a>
+                <a class="dropdown-item" routerLink="/contactUs">Contact us</a>
+            </div>
+        </div>
 </header>
