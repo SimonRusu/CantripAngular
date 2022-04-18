@@ -1,0 +1,15 @@
+@import url(../header/header.component.css);
+
+.menu-profile {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+    .menu-profile {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+}

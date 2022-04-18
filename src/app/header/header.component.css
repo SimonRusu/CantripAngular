@@ -9,15 +9,15 @@ h1 {
     float: right;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    padding:0;
+    padding: 0;
 }
 
-.nav-container > li > a{
+.nav-container>li>a {
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
-.nav-container > li{
+.nav-container>li {
     padding: 0.8rem;
 }
 
@@ -45,23 +45,27 @@ header {
     align-items: center;
 }
 
-
-@media (max-width: 795px) {
-    .nav-container {
-        grid-template-columns: repeat(2, auto);
-    }
-
-    
+.burger-menu {
+    display: none;
 }
 
-@media (max-width: 576px) {
-    .menu-link {
-        font-size: 1rem;
+@media (max-width: 767px) {
+
+    .menu {
+        display: none;
     }
 
-    .nav-container > li{
-        padding: 0.3rem;
+    .burger-menu {
+        display: flex;
+        margin-right: 2rem;
     }
 
-    
+    .btn-secondary {
+        background-color: white;
+        border: none;
+    }
+
+    .dropdown-menu {
+        left: -10rem;
+    }
 }

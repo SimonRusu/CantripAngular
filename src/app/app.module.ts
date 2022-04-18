@@ -27,8 +27,12 @@ import { PasswordPageComponent } from './password-page/password-page.component';
 import { RoutePageComponent } from './route-page/route-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+<<<<<<< HEAD
 import { MapComponent } from './map/map.component';
 import { TimetableComponent } from './timetable/timetable.component';
+=======
+import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
+>>>>>>> 7c3713de6cd40704cf89b83d5a011423b9c9f095
 
 
 @NgModule({
@@ -52,7 +56,11 @@ import { TimetableComponent } from './timetable/timetable.component';
     RoutePageComponent,
     ProfilePageComponent,
     AboutUsPageComponent,
+<<<<<<< HEAD
     MapComponent,
+=======
+    LoggedInHeaderComponent,
+>>>>>>> 7c3713de6cd40704cf89b83d5a011423b9c9f095
 
     TimetableComponent
   ],

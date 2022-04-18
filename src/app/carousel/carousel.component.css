@@ -1,0 +1,39 @@
+.carousel-inner>.carousel-item>img {
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+}
+
+@media (max-width: 1099px) {
+
+    /*tablet landscape*/
+
+    .carousel-inner,
+    .carousel-control {
+        display: none;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .carousel-inner,
+    .carousel-control {
+        display: flex;
+    }
+}
+
+@media (max-width: 575px) {
+
+    /* Mobile portrait*/
+
+    .carousel-inner,
+    .carousel-control {
+        display: none;
+    }
+}
