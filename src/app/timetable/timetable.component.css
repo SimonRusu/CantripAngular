@@ -1,7 +1,7 @@
 #timetable{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 30rem;
-    width: 40rem;
+    width: 30rem;
     border-radius: 2rem;
     text-align: center;
     padding-top: 2rem;
@@ -48,3 +48,10 @@
     background-color: white;
 }
 
+
+@media(max-width: 575px){
+    #timetable{
+        width: 20rem;
+        margin-left: unset;
+    }
+}

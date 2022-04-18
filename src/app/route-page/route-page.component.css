@@ -1,19 +1,54 @@
-.cart-btn-container{
-    position: absolute;
-    top: 40rem;
-    right: 5rem;
-}
 
 .cart-btn{
+    float: right;
     border:none;
     border-radius: 50%;
     width: 6rem;
     height: 6rem;
     background-color: #00B4D8;
+    margin-right: 5rem;
+    position: absolute;
+    justify-self: end;
+    align-self: end;
 }
 
 #cart-img{
     width: 3rem;
     height: auto;
+
+}
+
+.route-container{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    place-items: center;
+    margin-top: 3rem;
+    position: relative;
+    margin-bottom: 10rem;
+    padding-left: 2.5rem;
+}
+
+app-map{
+    padding-left: 1rem;
+}
+
+@media (max-width: 967px) {
+    .route-container{
+        padding-left: unset;
+        grid-template-columns: repeat(1, 100%);
+    }
+    app-map{
+        grid-row: 1;
+        margin-bottom:2em;
+        padding-left: unset;
+    }
+
+    .cart-btn{
+        position: relative;
+        float:none;
+        justify-self: center;
+        margin-right: unset;
+        margin-top: 3rem;
+    }
 
 }
