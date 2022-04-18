@@ -3,3 +3,8 @@
     object-fit: cover;
     border-radius: 2rem;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+}
