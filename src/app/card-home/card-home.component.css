@@ -1,0 +1,16 @@
+.outstanding-routes-img {
+    margin-top: 0;
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 575px) {
+
+    /* Mobile portrait*/
+    .outstanding-routes-img {
+        width: 16rem;
+        height: 22rem;
+    }
+}
