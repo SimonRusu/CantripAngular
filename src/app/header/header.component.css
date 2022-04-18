@@ -57,11 +57,15 @@ header {
 
     .burger-menu {
         display: flex;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     .btn-secondary {
         background-color: white;
         border: none;
+    }
+
+    .dropdown-menu {
+        left: -10rem;
     }
 }
