@@ -49,7 +49,7 @@ header {
     display: none;
 }
 
-@media (max-width: 795px) {
+@media (max-width: 767px) {
 
     .menu {
         display: none;

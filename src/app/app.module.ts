@@ -27,6 +27,7 @@ import { PasswordPageComponent } from './password-page/password-page.component';
 import { RoutePageComponent } from './route-page/route-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
     RoutePageComponent,
     ProfilePageComponent,
     AboutUsPageComponent,
+    LoggedInHeaderComponent,
 
   ],
   imports: [
