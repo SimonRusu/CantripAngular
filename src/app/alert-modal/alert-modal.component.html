@@ -1,0 +1,12 @@
+<div class="text-center">
+    <h2 matDialogTitle>{{dialogTitle}}</h2>
+    <mat-dialog-content>
+      <p>{{dialogText}}</p>      
+    </mat-dialog-content>
+    <span class="material-icons md-72 {{dialogIconColor}} ">{{dialogIcon}}</span>
+        
+    <mat-dialog-actions align="center">
+        <button class="btn btn-primary " matDialogClose="true" (click)="closeDialog()">Accept</button>
+    </mat-dialog-actions>
+</div>
+

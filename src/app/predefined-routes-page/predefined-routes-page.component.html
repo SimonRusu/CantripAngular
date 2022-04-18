@@ -1,0 +1,22 @@
+<section id="config-search">
+    <a routerLink="" class="create-link"><button class="input_overlay" id="create-route">Create your own</button></a>
+    <div id="search-sort-container">
+        <app-search-bar></app-search-bar>
+    </div>
+</section>
+
+<section class="outstanding-routes-container">
+  <div *ngFor="let predefinedRoute of predefinedRoutes | async">
+
+    <app-card-predefined [numberOfPeople]="predefinedRoute.numberOfPeople" [price]="predefinedRoute.price"
+                       [routeName]="predefinedRoute.routeName" [thumbnailPath]="predefinedRoute.thumbnailPath">
+
+    </app-card-predefined>
+
+  </div>
+
+  <div class="w-100 footer-margin"></div>
+
+
+</section>
+

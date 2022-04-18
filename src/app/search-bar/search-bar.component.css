@@ -1,4 +1,34 @@
-.search-form{
+.search-form {
     display: grid;
     grid-template-columns: repeat(2, 20rem);
+
+}
+
+@media (max-width: 1099px) {
+    /*tablet landscape*/
+
+    .input_overlay_submit {
+        width: 40% !important;
+    }
+
+    .search-form {
+        display: flex;
+        justify-items: center;
+    }
+
+    .search-form>.input_overlay {
+        margin-right: 1rem;
+    }
+
+}
+
+@media (max-width: 767px) {
+    /* Tablet portrait*/
+
+    #search-sort-container {
+        justify-content: center;
+        margin-top: 2rem;
+
+    }
+
 }

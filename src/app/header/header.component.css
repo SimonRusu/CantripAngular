@@ -5,21 +5,32 @@ h1 {
     font-size: 3rem;
 }
 
-.nav-container{
+.nav-container {
     float: right;
     display: grid;
     grid-template-columns: repeat(4, auto);
+    padding: 0;
 }
 
-.menu-link{
+.nav-container>li>a {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container>li {
+    padding: 0.8rem;
+}
+
+.menu-link {
     font-family: 'Raleway';
     margin-left: 2rem;
     align-self: center;
     justify-self: center;
     font-size: 1.5rem;
+    padding: 1rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -28,8 +39,29 @@ ul {
     list-style-type: none;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.burger-menu {
+    display: none;
+}
+
+@media (max-width: 795px) {
+
+    .menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-right: 3rem;
+    }
+
+    .btn-secondary {
+        background-color: white;
+        border: none;
+    }
 }
