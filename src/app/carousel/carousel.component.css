@@ -1,0 +1,5 @@
+.carousel-inner>.carousel-item>img {
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 2rem;
+}
