@@ -1,5 +1,9 @@
-<h1 class="text-center">Route Name</h1>
 
+<div *ngFor="let predefinedRoute of predefinedRoutes | async">
+  <div *ngIf="checkRoute(predefinedRoute)">
+    <h1 class="text-center">{{predefinedRoute.routeName}}</h1>
+  </div>
+</div>
 <app-route-settings></app-route-settings>
 <div class="route-container">
     <app-timetable></app-timetable>
@@ -9,3 +13,4 @@
 
 
 <div class="w-100 footer-margin"></div>
+
