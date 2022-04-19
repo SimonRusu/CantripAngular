@@ -1,42 +1,16 @@
 <section id="timetable">
+    <div *ngFor="let activityId of routeActivities">
+        <p>aqui</p>
+        <div *ngFor="let activity of activities | async">
+            <div *ngIf="checkActivity(activity.activityId, activityId)">
+                <div class="exact-hour-container">
+                    <p class="exact-hour">{{getNextHour(activity.timeAvailability , activity.timeDuration)}}</p>
+                </div>
 
-    <div class="exact-hour-container">
-        <p class="exact-hour">09:00</p>
-    </div>
-
-    <div class="activity-container">
-        <p class="activity-duration">09:00-09:45</p><p>Activity 1</p><button class="delete-btn">X</button>
-    </div>
-
-    <div class="exact-hour-container">
-        <p class="exact-hour">10:00</p>
-    </div>
-
-    <div class="activity-container">
-        <p class="activity-duration">10:00-10:30</p><p>Activity 2</p><button class="delete-btn">X</button>
-    </div>
-
-    <div class="exact-hour-container">
-        <p class="exact-hour">10:00</p>
-    </div>
-
-    <div class="activity-container">
-        <p class="activity-duration">10:00-10:30</p><p>Activity 2</p><button class="delete-btn">X</button>
-    </div>
-
-    <div class="exact-hour-container">
-        <p class="exact-hour">10:00</p>
-    </div>
-
-    <div class="activity-container">
-        <p class="activity-duration">10:00-10:30</p><p>Activity 2</p><button class="delete-btn">X</button>
-    </div>
-
-    <div class="exact-hour-container">
-        <p class="exact-hour">10:00</p>
-    </div>
-
-    <div class="activity-container">
-        <p class="activity-duration">10:00-10:30</p><p>Activity 2</p><button class="delete-btn">X</button>
+                <div class="activity-container">
+                    <p class="activity-duration">{{getNextHour(activity.timeAvailability , activity.timeDuration)}}-{{intToHour(currentTimeInt)}}</p><p>{{activity.activityName}}</p><button class="delete-btn">X</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
