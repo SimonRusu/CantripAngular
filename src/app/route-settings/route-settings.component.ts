@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-route-settings',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./route-settings.component.css']
 })
 export class RouteSettingsComponent implements OnInit {
-
+  @Input() numberOfPeople !: number;
+  @Input() date !: string;
+  @Input() startingTime !: string;
   constructor() { }
 
   ngOnInit(): void {

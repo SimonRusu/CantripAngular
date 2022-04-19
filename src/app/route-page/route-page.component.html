@@ -2,15 +2,14 @@
 <div *ngFor="let predefinedRoute of predefinedRoutes | async">
   <div *ngIf="checkRoute(predefinedRoute)">
     <h1 class="text-center">{{predefinedRoute.routeName}}</h1>
+    <app-route-settings [numberOfPeople]="predefinedRoute.numberOfPeople" [date]="predefinedRoute.dateAvailability[0]" [startingTime]="predefinedRoute.startTime"></app-route-settings>
+    <div class="route-container">
+      <app-timetable></app-timetable>
+      <app-map></app-map>
+      <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
   </div>
+  </div>
+  
 </div>
-<app-route-settings></app-route-settings>
-<div class="route-container">
-    <app-timetable></app-timetable>
-    <app-map></app-map>
-    <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
-</div>
-
-
 <div class="w-100 footer-margin"></div>
 
