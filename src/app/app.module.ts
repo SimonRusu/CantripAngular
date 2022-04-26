@@ -30,6 +30,14 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { MapComponent } from './map/map.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
+import { environment } from 'src/environments/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 
 @NgModule({
@@ -65,7 +73,9 @@ import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.com
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   exports: [
     HttpClientModule

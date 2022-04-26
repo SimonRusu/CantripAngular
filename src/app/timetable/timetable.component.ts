@@ -23,14 +23,24 @@ export class TimetableComponent implements OnInit {
   activities = this.activityService.getActivities();
   currentTimeInt !: number;
   encontrado: boolean = false;
+  hourAsync: string;
+
+
+
 
   constructor(private activityService: ActivityService) {
 
+
+  }
+  ngOnInit(): void {
+
+    this.currentTimeInt = this.hourToInt(this.currentTime);
   }
 
-  ngOnInit(): void {
+  ngAfterContentInit(): void {
     this.currentTimeInt = this.hourToInt(this.currentTime);
-
+    console.log("aquiii");
+    console.log(this.currentTimeInt);
   }
 
   checkActivity(activityId: number, routeActivity: number): boolean {
@@ -41,13 +51,13 @@ export class TimetableComponent implements OnInit {
     }
   }
 
-  getNextHour(timeAvailaility: string[], timeDuration: number): string {
+  getNextHour(timeAvailaility: string[], timeDuration: number) {
     if (!this.encontrado) {
       for (let hour of timeAvailaility) {
-
         if (this.hourToInt(hour) >= this.currentTimeInt) {
           console.log("perfecto");
           this.currentTimeInt = this.hourToInt(hour) + timeDuration;
+          console.log(this.currentTimeInt);
           this.encontrado = true;
           return hour;
         }

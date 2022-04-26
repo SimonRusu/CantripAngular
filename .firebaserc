@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cantrip-3c78d": {
+      "hosting": {
+        "CantripAngular": [
+          "cantrip-3c78d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cantrip-3c78d"
+  }
+}
