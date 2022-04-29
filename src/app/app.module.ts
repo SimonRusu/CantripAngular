@@ -37,6 +37,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 
 
 
@@ -76,11 +77,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
   exports: [
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: BUCKET, useValue: 'cantrip-angular' }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

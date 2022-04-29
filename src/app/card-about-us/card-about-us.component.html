@@ -1,16 +1,16 @@
 <div class="outstanding-routes-container" id="chief-container">
     <article class="cardCanTrip">
-        <img class="outstanding-routes-img" src="../assets/media/maria-image.jpg" alt="Maria's photo">
+        <img class="outstanding-routes-img" src="gs://cantrip-3c78d.appspot.com/media/maria-image.jpg" alt="Maria's photo">
         <p>María Naranjo</p>
         <p>Chief Technology Officer</p>
     </article>
     <article class="cardCanTrip">
-        <img class="outstanding-routes-img" src="../assets/media/raul-image.jpeg" alt="Raul's photo">
+        <img class="outstanding-routes-img" [src]="raulUrl | async" alt="Raul's photo">
         <p>Raúl Medina</p>
         <p>Chief Executive Officer</p>
     </article>
     <article class="cardCanTrip">
-        <img class="outstanding-routes-img" src="../assets/media/simon-image.JPG" alt="Simon's photo">
+        <img class="outstanding-routes-img" [src]='simonUrl | async'  alt="Simon's photo">
         <p>Simon Rusu</p>
         <p>Chief Marketing Officer</p>
     </article>
