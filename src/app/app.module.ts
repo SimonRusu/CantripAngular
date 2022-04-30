@@ -34,6 +34,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import * as firebase from 'firebase/compat';
 
 AngularFireModule.initializeApp(environment.firebase);
 @NgModule({
