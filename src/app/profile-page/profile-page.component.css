@@ -2,25 +2,32 @@
     text-align: center;
     position:absolute;
     top:9rem;
-    width: 100%;
+    width: 100%; 
 }
 
-.profile_container > img{
-    height:15em;
-    width:15em;
+.imageContainer{
+    display: inline-block;
     border-radius: 50%;
 }
 
-.editImageContainer{
-    position: absolute;
-    height: 40%;
-    width: 100%;
-    top:30%;
+.imageContainer:hover .editIcon{
+    display:block;
 }
 
-.editImageContainer > input{
-    height: 100%;
-    width: auto;
+.profile_container .editIcon {
+    position:absolute;
+    height: 5em;
+    width: 5em;
+    display:none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imageContainer > .userImage{
+    height:15em;
+    width:15em;
+    border-radius: 50%;
 }
 
 .email_container{

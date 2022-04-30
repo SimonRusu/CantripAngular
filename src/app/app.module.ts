@@ -31,6 +31,12 @@ import { MapComponent } from './map/map.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
 
+import { AngularFireModule} from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import { ImageSelectorModalComponent } from './image-selector-modal/image-selector-modal.component';
+
+
 
 @NgModule({
   declarations: [
@@ -56,7 +62,8 @@ import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.com
     MapComponent,
     LoggedInHeaderComponent,
 
-    TimetableComponent
+    TimetableComponent,
+     ImageSelectorModalComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,9 @@ import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.com
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   exports: [
     HttpClientModule

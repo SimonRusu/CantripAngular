@@ -109,6 +109,14 @@ body {
   margin-bottom: 10vw;
 }
 
+.image-selector-dialog-container .mat-dialog-container {
+  padding:0;
+  top:0;
+  height: 22rem;
+  width: 40rem;
+  overflow: unset;
+}
+
 
 @media (max-width: 1099px) {
 
