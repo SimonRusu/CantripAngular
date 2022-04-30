@@ -15,3 +15,8 @@ p{
     display: inline-block;
     margin-left:1rem;
 }
+
+.options-container > span {
+    margin-left:0.5rem;
+}
+

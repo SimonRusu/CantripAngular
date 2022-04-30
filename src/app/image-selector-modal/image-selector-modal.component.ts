@@ -1,5 +1,8 @@
 import { Component, ElementRef, Inject, OnInit } from '@angular/core';
 import { MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import * as $ from 'jquery';
+import { FileUpload } from 'src/models/fileUpload';
+import { FileUploadService } from 'src/services/file-upload.service';
 
 @Component({
   selector: 'app-image-selector-modal',
@@ -7,24 +10,24 @@ import { MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
   styleUrls: ['./image-selector-modal.component.css']
 })
 export class ImageSelectorModalComponent implements OnInit {
-
-  public dialogTitle: String;
-  public dialogText: String;
-  public dialogIcon: String;
-  public dialogIconColor: String
+  
+  dialogTitle: String;
+  dialogText: String;
+  dialogIcon: String;
+  dialogIconColor: String
+  selectedFile: File;
+  fileUpload: FileUpload;
 
   constructor(
     public dialogRef: MatDialogRef<ImageSelectorModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private uploadService: FileUploadService) {
 
     }
 
   ngOnInit(): void {
-    this.dialogTitle = this.data.dialogTitle;
-    this.dialogText = this.data.dialogText;
-    this.dialogIcon = this.data.dialogIcon;
-    this.dialogIconColor = this.data.dialogIconColor;
-    const matDialogConfig = new MatDialogConfig()
+
+    const matDialogConfig = new MatDialogConfig();
 
     matDialogConfig.position = { top: `160px` }
     this.dialogRef.updatePosition(matDialogConfig.position);
@@ -34,4 +37,20 @@ export class ImageSelectorModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  onFileChanged(event:any) {
+    this.selectedFile = event.target.files[0];
+    $('#selectedFile').text($('#fileInput').text().replace("", this.selectedFile.name));
+
+  }
+
+  onUpload(): void{
+    if (this.selectedFile) {
+      const file: File | null = this.selectedFile;
+
+      if (file) {
+        this.fileUpload = new FileUpload(file);
+        this.uploadService.pushFileToStorage(this.fileUpload);
+      }
+    }
+  }
 }

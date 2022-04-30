@@ -4,12 +4,16 @@
 </div>
 
 <div class="options-container p-4">
-    <button class=" btn btn-primary">Choose file</button>
-      <p>No file choosen</p>      
+    <button id="fileBtn" (click)="fileInput.click()" class=" btn btn-primary">Choose file</button> 
+    <span id="selectedFile">No image selected</span>
 </div>
 <p>Please upload a valid image file. Size file should not be more than 10MB.</p>
 
+<form>
+    <input id="fileInput" accept=".png, .jpg, .jpeg" style="display: none;" type="file" (change)="onFileChanged($event)" #fileInput>
+</form>
         
-    <mat-dialog-actions align="center">
-        <button class="btn btn-primary " matDialogClose="true" (click)="closeDialog()">Accept</button>
-    </mat-dialog-actions>
+<mat-dialog-actions align="center">
+    <button class="btn btn-success " matDialogClose="true" (click)="onUpload()">Upload file</button>
+</mat-dialog-actions>
+

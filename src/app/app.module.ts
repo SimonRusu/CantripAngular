@@ -33,6 +33,7 @@ import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.com
 
 import { AngularFireModule} from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
 import { ImageSelectorModalComponent } from './image-selector-modal/image-selector-modal.component';
 
@@ -74,7 +75,8 @@ import { ImageSelectorModalComponent } from './image-selector-modal/image-select
     MatDialogModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   exports: [
     HttpClientModule
