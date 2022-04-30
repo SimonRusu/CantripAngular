@@ -31,16 +31,11 @@ import { MapComponent } from './map/map.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
 import { environment } from 'src/environments/environment';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 
-
-
+AngularFireModule.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +73,7 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
+
   ],
   exports: [
     HttpClientModule
