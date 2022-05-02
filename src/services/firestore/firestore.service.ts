@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+import { Route } from 'src/app/route-page/route-page.component';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,11 @@ export class FirestoreService {
   }
 
   public getRoutes() {
-    return this.firestore.collection('predefinedRoutes').snapshotChanges();
+    return this.firestore.collection('predefinedRoutes')
+      .valueChanges({ routeId: 'id' }) as Observable<Route[]>;
+
   }
+
+
 
 }
