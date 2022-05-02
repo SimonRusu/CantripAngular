@@ -24,6 +24,10 @@
     transform: translate(-50%, -50%);
 }
 
+.imageContainer:hover{
+    cursor:pointer;
+}
+
 .imageContainer > .userImage{
     height:15em;
     width:15em;
