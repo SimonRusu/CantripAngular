@@ -3,7 +3,8 @@
 }
 .uploadTitle{
     background-color: #ffcb69;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     padding:5px;
 }
 
