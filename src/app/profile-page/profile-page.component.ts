@@ -18,12 +18,9 @@ export class ProfilePageComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ImageSelectorModalComponent,
-       {
+      {
         panelClass:"image-selector-dialog-container",
-        data: {dialogTitle: "UPLOAD PROFILE IMAGE",
-        dialogText: "Your request has been submitted succesfully",
-        dialogIcon: "task_alt",
-        dialogIconColor: "green"}});
+      });
         
   }
 
