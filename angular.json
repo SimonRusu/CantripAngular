@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "CantripAngular:build:production",
+            "firebaseProject": "cantrip-3c78d",
+            "firebaseHostingSite": "cantrip-3c78d"
+          }
         }
       }
     }

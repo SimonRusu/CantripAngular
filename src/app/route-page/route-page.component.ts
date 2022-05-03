@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import { ActivityService } from "../activity.service";
 import { RouteService } from "../route.service";
-import { map } from "rxjs";
 
 export interface Route {
   routeId: number;
@@ -13,7 +11,7 @@ export interface Route {
   thumbnailPath: string;
   dateAvailability: string[];
   publishDate: string;
-  activities: string[];
+  activities: number[];
   startTime: string
 }
 
@@ -27,13 +25,13 @@ export interface Route {
 export class RoutePageComponent implements OnInit {
 
   predefinedRoutes = this.routeService.getPredefinedRoutes();
-  activities = this.activityService.getActivities();
+
 
   routeParams = this.route.snapshot.paramMap;
   routeIdFromRoute !: number;
 
 
-  constructor(private route: ActivatedRoute, private activityService: ActivityService, private routeService: RouteService) {
+  constructor(private route: ActivatedRoute, private routeService: RouteService) {
 
     this.routeIdFromRoute = Number(this.routeParams.get('routeId'));
   }
@@ -48,6 +46,14 @@ export class RoutePageComponent implements OnInit {
     } else {
       return false;
     }
+
+  }
+
+  ifEmpty(): boolean {
+    if (this.routeIdFromRoute === 0) {
+      return false;
+    }
+    return true;
   }
 
 }
