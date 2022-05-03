@@ -34,17 +34,19 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import * as firebase from 'firebase/compat';
 
 
 import { AngularFireModule} from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { environment } from 'src/environments/environment';
 import { ImageSelectorModalComponent } from './image-selector-modal/image-selector-modal.component';
 
 
 
+AngularFireModule.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,12 +84,18 @@ import { ImageSelectorModalComponent } from './image-selector-modal/image-select
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+
   ],
   exports: [
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: BUCKET, useValue: 'cantrip-angular' }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
