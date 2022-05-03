@@ -1,6 +1,7 @@
 import { Component, ElementRef, Inject, OnInit } from '@angular/core';
 import { MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import * as $ from 'jquery';
+import { Observable } from 'rxjs';
 import { FileUpload } from 'src/models/fileUpload';
 import { FileUploadService } from 'src/services/file-upload.service';
 
@@ -11,12 +12,9 @@ import { FileUploadService } from 'src/services/file-upload.service';
 })
 export class ImageSelectorModalComponent implements OnInit {
   
-  dialogTitle: String;
-  dialogText: String;
-  dialogIcon: String;
-  dialogIconColor: String
   selectedFile: File;
   fileUpload: FileUpload;
+  imageUrl: Observable<string>;
 
   constructor(
     public dialogRef: MatDialogRef<ImageSelectorModalComponent>,
@@ -49,8 +47,11 @@ export class ImageSelectorModalComponent implements OnInit {
 
       if (file) {
         this.fileUpload = new FileUpload(file);
-        this.uploadService.pushFileToStorage(this.fileUpload);
+        this.imageUrl = this.uploadService.pushFileToStorage(this.fileUpload);
+        
       }
     }
+    this.imageUrl.subscribe(res => console.log(res));
   }
+
 }
