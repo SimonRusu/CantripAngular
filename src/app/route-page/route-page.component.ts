@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import { RouteService } from "../route.service";
+import {FirestoreService} from "../../services/firestore/firestore.service";
+//import { RouteService } from "../route.service";
 
 export interface Route {
   routeId: number;
@@ -22,25 +23,35 @@ export interface Route {
   templateUrl: './route-page.component.html',
   styleUrls: ['./route-page.component.css']
 })
+
+
 export class RoutePageComponent implements OnInit {
 
-  predefinedRoutes = this.routeService.getPredefinedRoutes();
+  //predefinedRoutes = this.routeService.getPredefinedRoutes();
 
 
-  routeParams = this.route.snapshot.paramMap;
-  routeIdFromRoute !: number;
+  routeParams = this.route.snapshot.params['routeId'];
+  routeIdFromRoute !: string;
+  routeData : any;
 
 
-  constructor(private route: ActivatedRoute, private routeService: RouteService) {
-
-    this.routeIdFromRoute = Number(this.routeParams.get('routeId'));
+  constructor(private route: ActivatedRoute, private firestoreService: FirestoreService) {
+     this.firestoreService.getRoute(this.routeParams).subscribe(route => {
+       this.routeData = route.payload.data();
+     })
   }
+
+
+
+  //getActivities()
+
+
 
   ngOnInit(): void {
 
   }
 
-  checkRoute(route: Route): boolean {
+  /*checkRoute(route: Route): boolean {
     if (route.routeId == this.routeIdFromRoute) {
       return true;
     } else {
@@ -54,6 +65,6 @@ export class RoutePageComponent implements OnInit {
       return false;
     }
     return true;
-  }
+  }*/
 
 }

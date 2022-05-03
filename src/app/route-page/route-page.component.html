@@ -1,19 +1,16 @@
 
-<div *ngIf="ifEmpty(); else empty">
-  <div *ngFor="let predefinedRoute of predefinedRoutes | async">
-    <div *ngIf="checkRoute(predefinedRoute)">
-      <h1 class="text-center">{{predefinedRoute.routeName}}</h1>
-      <app-route-settings [numberOfPeople]="predefinedRoute.numberOfPeople" [date]="predefinedRoute.dateAvailability[0]" [startingTime]="predefinedRoute.startTime"></app-route-settings>
+  <div *ngIf="routeData">
+      <h1 class="text-center">{{routeData.routeName}}</h1>
+      <app-route-settings [numberOfPeople]="routeData.numberOfPeople" [date]="routeData.dateAvailability[0]" [startingTime]="routeData.startTime"></app-route-settings>
       <div class="route-container">
-        <p>{{predefinedRoute.activities[1]}}</p>
-        <app-timetable [routeActivities]="predefinedRoute.activities" [currentTime]="predefinedRoute.startTime"></app-timetable>
+        <p>{{routeData.activities[1]}}</p>
+        <app-timetable [routeActivities]="routeData.activities" [currentTime]="routeData.startTime"></app-timetable>
         <app-map></app-map>
         <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
       </div>
-    </div>
   </div>
-</div>
-<ng-template #empty>
+
+<ng-template *ngIf="">
   <h1 class="text-center">Route Name</h1>
       <app-route-settings [numberOfPeople]="0" [date]="'19/04/2022'" [startingTime]="'10:00'"></app-route-settings>
       <div class="route-container">
@@ -21,7 +18,7 @@
         <app-map></app-map>
         <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
       </div>
-</ng-template>
+
 
 
 <div class="w-100 footer-margin"></div>
