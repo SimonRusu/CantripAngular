@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivityService } from "../activity.service";
+import { forkJoin, Subject } from 'rxjs';
+import { FirestoreService } from 'src/services/firestore/firestore.service';
 
 export interface Activity {
   activityName: string;
@@ -12,38 +13,58 @@ export interface Activity {
   timeDuration: number;
   maxConcurrentActivity: string
 }
+
+
+
 @Component({
   selector: 'app-timetable',
   templateUrl: './timetable.component.html',
   styleUrls: ['./timetable.component.css']
 })
 export class TimetableComponent implements OnInit {
-  @Input() routeActivities !: number[];
+  @Input() routeActivities : string[];
   @Input() currentTime !: string;
-  activities = this.activityService.getActivities();
-  currentTimeInt !: number;
-  encontrado: boolean = false;
-  hourAsync: string;
+  activities: Array<any> = [];
 
-
-
-
-  constructor(private activityService: ActivityService) {
-
+  constructor(private firestoreService: FirestoreService) {
+    
 
   }
   ngOnInit(): void {
-
-    this.currentTimeInt = this.hourToInt(this.currentTime);
+    this.activitiesToArray();
+    console.log(this.activities);
+    //this.getNextActivityHour();
   }
+
+
+   activitiesToArray(){
+    for (var i of this.routeActivities){
+
+      forkJoin([
+        
+        this.firestoreService.getActivity(i)
+      ]).subscribe((activity: any )=> {
+        
+        this.activities.push(activity.payload.data());
+      });
+    }
+  }
+
+  getNextActivityHour(){
+    console.log(this.activities);
+    console.log(this.activities.length);
+    for(var i of this.activities){
+      console.log("nop");
+    }
+    
+  }
+
 
   ngAfterContentInit(): void {
-    this.currentTimeInt = this.hourToInt(this.currentTime);
-    console.log("aquiii");
-    console.log(this.currentTimeInt);
+    //this.currentTimeInt = this.hourToInt(this.currentTime);
   }
 
-  checkActivity(activityId: number, routeActivity: number): boolean {
+  /*checkActivity(activityId: number, routeActivity: number): boolean {
     if (activityId == routeActivity) {
       return true;
     } else {
@@ -69,7 +90,8 @@ export class TimetableComponent implements OnInit {
   hourToInt(hour: string): number {
     return parseInt(hour.split(":")[0]);
   }
+
   intToHour(hourInt: number): string {
     return hourInt + ":00";
-  }
+  }*/
 }

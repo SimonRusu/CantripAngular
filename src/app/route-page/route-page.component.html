@@ -3,14 +3,13 @@
       <h1 class="text-center">{{routeData.routeName}}</h1>
       <app-route-settings [numberOfPeople]="routeData.numberOfPeople" [date]="routeData.dateAvailability[0]" [startingTime]="routeData.startTime"></app-route-settings>
       <div class="route-container">
-        <p>{{routeData.activities[1]}}</p>
         <app-timetable [routeActivities]="routeData.activities" [currentTime]="routeData.startTime"></app-timetable>
         <app-map></app-map>
         <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
       </div>
   </div>
 
-<ng-template *ngIf="">
+<!--<ng-template #empty>
   <h1 class="text-center">Route Name</h1>
       <app-route-settings [numberOfPeople]="0" [date]="'19/04/2022'" [startingTime]="'10:00'"></app-route-settings>
       <div class="route-container">
@@ -18,7 +17,7 @@
         <app-map></app-map>
         <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
       </div>
-
+    -->
 
 
 <div class="w-100 footer-margin"></div>

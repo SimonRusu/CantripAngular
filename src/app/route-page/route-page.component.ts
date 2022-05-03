@@ -42,29 +42,8 @@ export class RoutePageComponent implements OnInit {
   }
 
 
-
-  //getActivities()
-
-
-
   ngOnInit(): void {
 
   }
-
-  /*checkRoute(route: Route): boolean {
-    if (route.routeId == this.routeIdFromRoute) {
-      return true;
-    } else {
-      return false;
-    }
-
-  }
-
-  ifEmpty(): boolean {
-    if (this.routeIdFromRoute === 0) {
-      return false;
-    }
-    return true;
-  }*/
 
 }

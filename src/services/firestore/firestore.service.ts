@@ -28,6 +28,10 @@ export class FirestoreService {
     return this.firestore.collection('predefinedRoutes').doc(documentId).snapshotChanges();
   }
 
+  public getActivity(documentId: string) {
+    return this.firestore.collection('routeActivities').doc(documentId).snapshotChanges();
+  }
+
   public getRoutes() {
     return this.firestore.collection('predefinedRoutes')
       .valueChanges({ routeId: 'id' }) as Observable<Route[]>;
