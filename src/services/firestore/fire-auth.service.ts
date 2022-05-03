@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,6 @@ export class FireAuthService {
 
   async singIn(email: string, password: string): Promise<boolean> {
     let succesfully !: boolean;
-    console.log(succesfully);
     await this.angularFireAuth.signInWithEmailAndPassword(email, password).then(() => {
       console.log("User succesfully login");
       succesfully = true;
@@ -55,4 +54,17 @@ export class FireAuthService {
     })
     return exists;
   }
+
+  checkLoggedIn(): boolean {
+    let logged !: boolean;
+    this.angularFireAuth.onAuthStateChanged(function (user) {
+      if (user) {
+        logged = true;
+      } else {
+        logged = false;
+      }
+    })
+    return logged;
+  }
+
 }
