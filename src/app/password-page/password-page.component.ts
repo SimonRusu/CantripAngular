@@ -27,15 +27,15 @@ export class PasswordPageComponent implements OnInit {
   checkPassword() {
     this.fireAuth.singIn(this.email, this.passwordForm.value.password).then((succesfully) => {
       if (succesfully) {
-        this.navigateTo();
+        this.navigateTo('home');
       } else {
-        console.log("Password doeesnt match");
+        alert("Email and password do not match. Please, try again");
       }
     })
   }
 
-  navigateTo(): void {
-    this.router.navigate(['password']);
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 
 }
