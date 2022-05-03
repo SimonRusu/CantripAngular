@@ -14,6 +14,10 @@
     display:block;
 }
 
+.imageContainer:hover{
+    cursor: pointer;
+}
+
 .profile_container .editIcon {
     position:absolute;
     height: 5em;
