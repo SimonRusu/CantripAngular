@@ -1,13 +1,11 @@
-<!--<section id="timetable">
+<section id="timetable">
         <div *ngFor="let activity of activities | async">
-            <div *ngIf="checkActivity(activity.activityId, activityId)">
                 <div class="exact-hour-container">
-                    <p class="exact-hour">{{getNextHour(activity.timeAvailability , activity.timeDuration)}}</p>
+                    <p class="exact-hour" >{{getNextActivityHour(activity.timeAvailability, activity.timeDuration)}}</p>
                 </div>
 
-                <div class="activity-container">
-                    <p class="activity-duration" (ngModelChange)="getNextHour(activity.timeAvailability , activity.timeDuration)">{{getNextHour(activity.timeAvailability , activity.timeDuration)}}  -{{intToHour(currentTimeInt)}}</p><p>{{activity.activityName}}</p><button class="delete-btn">X</button>
+               <div class="activity-container">
+                    <p class="activity-duration">{{selectedTime}}-{{startActivityTime}}</p><p>{{activity.activityName}}</p><button class="delete-btn">X</button>
                 </div>
-            </div>
         </div>
-</section>-->
+</section>

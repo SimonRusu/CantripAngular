@@ -36,14 +36,17 @@ export class RoutePageComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private firestoreService: FirestoreService) {
-     this.firestoreService.getRoute(this.routeParams).subscribe(route => {
-       this.routeData = route.payload.data();
-     })
+    
   }
 
 
   ngOnInit(): void {
-
+    this.firestoreService.getRoute(this.routeParams).subscribe(route => {
+      this.routeData = route.payload.data();
+    })
   }
+
+
+
 
 }

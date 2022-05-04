@@ -3,7 +3,7 @@
       <h1 class="text-center">{{routeData.routeName}}</h1>
       <app-route-settings [numberOfPeople]="routeData.numberOfPeople" [date]="routeData.dateAvailability[0]" [startingTime]="routeData.startTime"></app-route-settings>
       <div class="route-container">
-        <app-timetable [routeActivities]="routeData.activities" [currentTime]="routeData.startTime"></app-timetable>
+        <app-timetable [routeActivities]="routeData.activities" [startActivityTime]="routeData.startTime"></app-timetable>
         <app-map></app-map>
         <button class="cart-btn"><img src="../assets/media/shoppingcart-icon.png" id="cart-img"></button>
       </div>

@@ -1,6 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { forkJoin, Subject } from 'rxjs';
+import { forkJoin, Observable, Subject } from 'rxjs';
 import { FirestoreService } from 'src/services/firestore/firestore.service';
+import {
+  query,
+  collection,
+  where,
+  documentId,
+  getDocs
+} from "firebase/firestore";
 
 export interface Activity {
   activityName: string;
@@ -22,76 +29,41 @@ export interface Activity {
   styleUrls: ['./timetable.component.css']
 })
 export class TimetableComponent implements OnInit {
-  @Input() routeActivities : string[];
-  @Input() currentTime !: string;
-  activities: Array<any> = [];
+  @Input() routeActivities : any;
+  @Input() startActivityTime !: string;
+  activities = new Subject<any>()
+  selectedTime = 'none';
+
 
   constructor(private firestoreService: FirestoreService) {
-    
-
   }
-  ngOnInit(): void {
-    this.activitiesToArray();
-    console.log(this.activities);
-    //this.getNextActivityHour();
-  }
-
-
-   activitiesToArray(){
-    for (var i of this.routeActivities){
-
-      forkJoin([
-        
-        this.firestoreService.getActivity(i)
-      ]).subscribe((activity: any )=> {
-        
-        this.activities.push(activity.payload.data());
-      });
+    ngOnInit(): void {
+      this.getActivities();
     }
-  }
 
-  getNextActivityHour(){
-    console.log(this.activities);
-    console.log(this.activities.length);
-    for(var i of this.activities){
-      console.log("nop");
+    getActivities(): Observable<any>{
+      this.firestoreService.getActivitiesById(this.routeActivities).subscribe(items =>{
+        this.activities.next(items);
+      })
+      return this.activities.asObservable();
     }
-    
-  }
 
-
-  ngAfterContentInit(): void {
-    //this.currentTimeInt = this.hourToInt(this.currentTime);
-  }
-
-  /*checkActivity(activityId: number, routeActivity: number): boolean {
-    if (activityId == routeActivity) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  getNextHour(timeAvailaility: string[], timeDuration: number) {
-    if (!this.encontrado) {
-      for (let hour of timeAvailaility) {
-        if (this.hourToInt(hour) >= this.currentTimeInt) {
-          console.log("perfecto");
-          this.currentTimeInt = this.hourToInt(hour) + timeDuration;
-          console.log(this.currentTimeInt);
-          this.encontrado = true;
-          return hour;
+    getNextActivityHour( timeAvailaility : [], timeDuration : number): string{
+        for(let actualTime of timeAvailaility){
+          if(actualTime >= this.startActivityTime){
+            this.selectedTime = actualTime;
+            this.startActivityTime = this.intToHour(this.hourToInt(actualTime)+timeDuration);
+            break;
+          }
         }
-      }
+        return this.selectedTime;
     }
-    return "";
-  }
 
-  hourToInt(hour: string): number {
-    return parseInt(hour.split(":")[0]);
-  }
+    hourToInt(hour: string): number {
+      return parseInt(hour.split(":")[0]);
+    }
 
-  intToHour(hourInt: number): string {
-    return hourInt + ":00";
-  }*/
+    intToHour(hourInt: number): string {
+      return hourInt + ":00";
+    }
 }
