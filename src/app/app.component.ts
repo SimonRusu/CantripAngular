@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FireAuthService } from 'src/services/firestore/fire-auth.service';
 
 @Component({
@@ -8,10 +8,12 @@ import { FireAuthService } from 'src/services/firestore/fire-auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'CantripAngular';
+  logged !: boolean;
   constructor(private fireAuth: FireAuthService) { }
 
   ngOnInit(): void {
-    this.checkLoggedIn();
+    this.logged = this.checkLoggedIn();
+    console.log(this.logged)
   }
 
   public onSubmit() {
@@ -19,13 +21,18 @@ export class AppComponent implements OnInit {
     this.fireAuth.SignOut();
   }
 
-  async checkLoggedIn(): Promise<boolean> {
-    console.log("Aqui");
-    console.log(this.fireAuth.checkLoggedIn());
-    return this.fireAuth.checkLoggedIn();
+  checkLoggedIn(): boolean {
+    this.fireAuth.checkLoggedIn();
+    let dato = localStorage.getItem('user');
+    console.log("Aqui")
+    console.log(dato);
+    if (dato !== "false") {
+      console.log("logueado");
+      return true;
+    } else {
+      console.log("no logueado");
+      return false;
+    }
   }
-
-
-
 
 }

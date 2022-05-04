@@ -14,8 +14,6 @@ export class FireAuthService {
   async singUp(email: string, password: string) {
 
     this.angularFireAuth.createUserWithEmailAndPassword(email, password).then(resp => {
-      console.log("User succesfully signed up");
-
     })
       .catch(error => {
         console.log("Something went wrong in register: ", error.message);
@@ -24,10 +22,11 @@ export class FireAuthService {
 
   }
 
+
+
   async singIn(email: string, password: string): Promise<boolean> {
     let succesfully !: boolean;
     await this.angularFireAuth.signInWithEmailAndPassword(email, password).then(() => {
-      console.log("User succesfully login");
       succesfully = true;
     })
       .catch((error) => {
@@ -45,26 +44,28 @@ export class FireAuthService {
     let exists !: boolean;
     await this.angularFireAuth.fetchSignInMethodsForEmail(email).then(user => {
       if (user.length > 0) {
-        console.log("User exists");
         exists = true;
       } else {
-        console.log("User doesn't exist");
         exists = false;
       }
     })
     return exists;
   }
 
-  checkLoggedIn(): boolean {
+  checkLoggedIn(): any {
     let logged !: boolean;
-    this.angularFireAuth.onAuthStateChanged(function (user) {
-      if (user) {
-        logged = true;
+    this.angularFireAuth.authState.subscribe(userResponse => {
+      if (userResponse) {
+        console.log('here is your user data');
+        localStorage.setItem('user', JSON.stringify(userResponse));
+
+        console.log(userResponse);
+        return true;
       } else {
-        logged = false;
+        localStorage.setItem('user', "false");
+        return false;
       }
-    })
-    return logged;
+    });
   }
 
 }

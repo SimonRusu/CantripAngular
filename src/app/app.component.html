@@ -1,10 +1,9 @@
-<!-- <div *ngIf="checkLoggedIn() | async ; else notLoggedIn">
-    <app-logged-in-header></app-logged-in-header>
+<div *ngIf="logged ; else notLoggedIn">
+     <app-logged-in-header></app-logged-in-header>
 </div>
 <ng-template #notLoggedIn>
     <app-header></app-header>
-</ng-template> -->
-<app-logged-in-header></app-logged-in-header>
+</ng-template>
 <a (click)="onSubmit()" >Aqui</a>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
