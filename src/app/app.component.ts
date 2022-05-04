@@ -16,11 +16,6 @@ export class AppComponent implements OnInit {
     console.log(this.logged)
   }
 
-  public onSubmit() {
-
-    this.fireAuth.SignOut();
-  }
-
   checkLoggedIn(): boolean {
     this.fireAuth.checkLoggedIn();
     let dato = localStorage.getItem('user');
