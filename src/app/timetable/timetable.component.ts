@@ -16,12 +16,10 @@ export interface Activity {
   price: number;
   activityType: string;
   dateAvailability: string[];
-  timeAvailaility: string[];
+  timeAvailability: string[];
   timeDuration: number;
   maxConcurrentActivity: string
 }
-
-
 
 @Component({
   selector: 'app-timetable',
@@ -30,34 +28,54 @@ export interface Activity {
 })
 export class TimetableComponent implements OnInit {
   @Input() routeActivities : any;
-  @Input() startActivityTime !: string;
-  activities = new Subject<any>()
-  selectedTime = 'none';
-
+  @Input() startActivityTime : string;
+  
+  activities :Array<Activity> = [];
+  actParseData : Array<any> =[];
+  subject = new Subject<Array<any>>();
+  displayActivities = new Observable<Array<any>>();
 
   constructor(private firestoreService: FirestoreService) {
   }
     ngOnInit(): void {
-      this.getActivities();
+      this.displayActivities = this.getActivitiesData();
+      this.displayActivities.subscribe(data=>{console.log(data)});
     }
 
-    getActivities(): Observable<any>{
+    getActivitiesData(): Observable<Array<any>>{
       this.firestoreService.getActivitiesById(this.routeActivities).subscribe(items =>{
-        this.activities.next(items);
-      })
-      return this.activities.asObservable();
-    }
+        this.activities = items as Activity[];
+        let selectedTime = '';
+        let startActivity = this.startActivityTime;
 
-    getNextActivityHour( timeAvailaility : [], timeDuration : number): string{
-        for(let actualTime of timeAvailaility){
-          if(actualTime >= this.startActivityTime){
-            this.selectedTime = actualTime;
-            this.startActivityTime = this.intToHour(this.hourToInt(actualTime)+timeDuration);
-            break;
+        for(let activity of this.activities){
+          let findHour = false;
+          for(let actualTime of activity.timeAvailability){
+            
+            if(this.hourToInt(actualTime) >= this.hourToInt(startActivity)){
+              selectedTime = actualTime;
+              startActivity = this.intToHour(this.hourToInt(actualTime)+activity.timeDuration);
+              findHour = true;
+              break;
+            }
+          }
+
+          if(findHour){
+            this.actParseData.push(
+              {
+                name: activity.activityName,
+                selectedTime: selectedTime,
+                finishActivity: startActivity
+              });
+              findHour = false;
           }
         }
-        return this.selectedTime;
+        this.subject.next(this.actParseData);
+        
+      })
+      return this.subject.asObservable();
     }
+
 
     hourToInt(hour: string): number {
       return parseInt(hour.split(":")[0]);

@@ -1,11 +1,11 @@
-<section id="timetable">
-        <div *ngFor="let activity of activities | async">
+ <section id="timetable">
+        <div *ngFor="let activity of displayActivities | async">
                 <div class="exact-hour-container">
-                    <p class="exact-hour" >{{getNextActivityHour(activity.timeAvailability, activity.timeDuration)}}</p>
+                    <p class="exact-hour" >{{activity.selectedTime}}</p>
                 </div>
 
                <div class="activity-container">
-                    <p class="activity-duration">{{selectedTime}}-{{startActivityTime}}</p><p>{{activity.activityName}}</p><button class="delete-btn">X</button>
+                    <p class="activity-duration">{{activity.selectedTime}}-{{activity.finishActivity}}</p><p>{{activity.name}}</p><button class="delete-btn">X</button>
                 </div>
         </div>
-</section>
+</section> 

@@ -13,7 +13,10 @@ import {
 @Injectable({
   providedIn: 'root'
 })
+
 export class FirestoreService {
+
+  
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -48,9 +51,4 @@ export class FirestoreService {
       .valueChanges({ routeId: 'id' }) as Observable<Route[]>;
 
   }
-
-  
-
-
-
 }

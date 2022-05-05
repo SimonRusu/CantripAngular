@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
 import {FirestoreService} from "../../services/firestore/firestore.service";
-//import { RouteService } from "../route.service";
 
 export interface Route {
   routeId: number;
@@ -27,7 +26,7 @@ export interface Route {
 
 export class RoutePageComponent implements OnInit {
 
-  //predefinedRoutes = this.routeService.getPredefinedRoutes();
+  
 
 
   routeParams = this.route.snapshot.params['routeId'];
