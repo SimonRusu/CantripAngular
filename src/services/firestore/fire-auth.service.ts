@@ -37,7 +37,9 @@ export class FireAuthService {
   }
 
   SignOut() {
-    this.angularFireAuth.signOut();
+    this.angularFireAuth.signOut().then(() => {
+      window.location.reload();
+    });
   }
 
   async checkEmailExists(email: string): Promise<boolean> {
@@ -52,7 +54,7 @@ export class FireAuthService {
     return exists;
   }
 
-  checkLoggedIn(): any {
+  async checkLoggedIn(): Promise<boolean> {
     let logged !: boolean;
     this.angularFireAuth.authState.subscribe(userResponse => {
       if (userResponse) {
@@ -60,12 +62,13 @@ export class FireAuthService {
         localStorage.setItem('user', JSON.stringify(userResponse));
 
         console.log(userResponse);
-        return true;
+        logged = true;
       } else {
         localStorage.setItem('user', "false");
-        return false;
+        logged = false;
       }
     });
+    return logged;
   }
 
 }

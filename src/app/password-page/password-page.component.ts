@@ -35,7 +35,9 @@ export class PasswordPageComponent implements OnInit {
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route]);
+    this.router.navigate([route]).then(() =>{
+      window.location.reload();
+    });
   }
 
 }
