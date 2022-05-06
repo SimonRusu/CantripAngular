@@ -1,4 +1,10 @@
-<app-logged-in-header></app-logged-in-header>
+<div *ngIf="logged ; else notLoggedIn">
+     <app-logged-in-header></app-logged-in-header>
+</div>
+<ng-template #notLoggedIn>
+    <app-header></app-header>
+</ng-template>
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

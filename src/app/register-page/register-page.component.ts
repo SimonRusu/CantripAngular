@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, Form, ValidatorFn, AbstractControl,
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertModalComponent } from '../alert-modal/alert-modal.component';
+import {FireAuthService} from "../../services/firestore/fire-auth.service";
 
 @Component({
   selector: 'app-register-page',
@@ -11,11 +12,11 @@ import { AlertModalComponent } from '../alert-modal/alert-modal.component';
 })
 export class RegisterPageComponent implements OnInit {
   registerForm: FormGroup;
-  public email: String;
+  public email: string;
 
-  constructor(private router: Router, public dialog: MatDialog) {
-    //const data = this.router.getCurrentNavigation()?.extras.state as {email:String};
-    //this.email = data.email;
+  constructor(private router: Router, public dialog: MatDialog, private fireAuth: FireAuthService) {
+    const data = this.router.getCurrentNavigation()?.extras.state as {email:string};
+    this.email = data.email;
   }
 
   ngOnInit(): void {
@@ -25,10 +26,10 @@ export class RegisterPageComponent implements OnInit {
 
       confirmPassword: new FormControl('', [Validators.required])
     }, {validators:this.checkPasswords})
-    
+
   }
 
-  checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
+  checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmPassword')?.value
 
@@ -37,18 +38,33 @@ export class RegisterPageComponent implements OnInit {
 
   registerUser(): void{
     console.log(this.email);
-    console.log(this.registerForm.value);
-    this.openDialog();
+    console.log(this.registerForm.value.password);
+    this.fireAuth.singUp(this.email, this.registerForm.value.password).then(() => {
+      this.openDialog();
+    }).catch((error) => {
+      this.errorDialog();
+
+    })
+
   }
 
   openDialog(): void{
     const dialogRef = this.dialog.open(AlertModalComponent,
-       {data: {dialogTitle: "Thanks, you're almost there!",
-        dialogText: "Please confirm your subscription by the email request",
+       {data: {dialogTitle: "Thanks for registering!",
+        dialogText: "If you have any problems or suggestions, feel free to contact us",
         dialogIcon: "mark_email_unread",
         dialogIconColor: "black"}});
     console.log(this.registerForm.value);
   }
-  
+
+  errorDialog(): void{
+    this.dialog.open(AlertModalComponent,
+      {data: {dialogTitle: "There was an error in the registration process!",
+          dialogText: "Please,try again",
+          dialogIcon: "mark_email_unread",
+          dialogIconColor: "black"}});
+
+  }
+
 }
 

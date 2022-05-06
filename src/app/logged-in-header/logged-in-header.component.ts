@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireAuthService } from 'src/services/firestore/fire-auth.service';
 
 @Component({
   selector: 'app-logged-in-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoggedInHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fireAuth: FireAuthService) { }
 
   ngOnInit(): void {
   }
 
+  public onSubmit() {
+
+    this.fireAuth.SignOut();
+  }
 }
