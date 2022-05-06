@@ -51,7 +51,6 @@ export class ImageSelectorModalComponent implements OnInit {
         
       }
     }
-    this.imageUrl.subscribe(res => console.log(res));
   }
 
 }
