@@ -14,7 +14,6 @@ export class ImageSelectorModalComponent implements OnInit {
   
   selectedFile: File;
   fileUpload: FileUpload;
-  imageUrl: Observable<string>;
 
   constructor(
     public dialogRef: MatDialogRef<ImageSelectorModalComponent>,
@@ -47,7 +46,7 @@ export class ImageSelectorModalComponent implements OnInit {
 
       if (file) {
         this.fileUpload = new FileUpload(file);
-        this.imageUrl = this.uploadService.pushFileToStorage(this.fileUpload);
+        this.uploadService.pushFileToStorage(this.fileUpload);
         
       }
     }

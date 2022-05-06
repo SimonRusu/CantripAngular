@@ -38,6 +38,7 @@
     border-radius: 50%;
 }
 
+
 .email_container{
     margin-top:20em;
     display: flex;
@@ -48,13 +49,15 @@
 .email_element > img{
     object-fit: contain;
     height: 20px;
-    padding-left:1em;
+    padding-left:3em;
+    cursor:pointer;
 }
 
 .email_element > input{
     outline: none;
     border: none;
     background: none;
+    width: 15rem;
 }
 
 .email_element {

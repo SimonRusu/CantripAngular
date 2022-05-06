@@ -5,7 +5,7 @@
             <li><a routerLink="/predefined-routes" class="menu-link">Search routes</a></li>
             <li><a routerLink="/about-us" class="menu-link">About us</a></li>
             <li><a routerLink="/contact-us" class="menu-link">Contact us</a></li>
-            <li><a routerLink="/profile" ><img class="menu-profile" src="/assets/media/user.jpg"></a></li>
+            <li><a routerLink="/profile" ><img class="menu-profile" src={{(profileData|async)?.photoURL}} onerror="if (this.src != '') this.src = './assets/media/user.jpg';"></a></li>
         </ul>
     </nav>
 
@@ -15,7 +15,7 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" routerLink="/profile"><img class=" menu-profile" src="/assets/media/user.jpg"></a>
+                <a class="dropdown-item" routerLink="/profile"><img class=" menu-profile" src={{(profileData|async)?.photoURL}} onerror="if (this.src != '') this.src = './assets/media/user.jpg';"></a>
                 <a class="dropdown-item" routerLink="/home">Cantrip</a>
                 <a class="dropdown-item" routerLink="/predefinedRoute">Search routes</a>
                 

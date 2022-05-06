@@ -12,8 +12,7 @@ export class FileUploadService {
   private basePath = '/users';
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage, private fireAuth: FireAuthService) { }
   
-  pushFileToStorage(fileUpload: FileUpload): Observable<string> {
-    var subject = new Subject<string>();
+  pushFileToStorage(fileUpload: FileUpload): void {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
     const uploadTask = this.storage.upload(filePath, fileUpload.file);
@@ -28,12 +27,10 @@ export class FileUploadService {
               photoURL: downloadURL,
             })
           })
-          subject.next(downloadURL);
           
         });
       })
     ).subscribe();
-    return subject.asObservable();
   }
 
 

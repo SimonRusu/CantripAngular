@@ -1,6 +1,6 @@
 <section class="profile_container">
-    <div  class="imageContainer" (click)="openDialog()">
-        <img class ="userImage" src={{(profileData|async).photoURL}} /> 
+    <div  class="imageContainer" (click)="openImageDialog()">
+        <img class ="userImage" src={{(profileData|async)?.photoURL}} onerror="if (this.src != '') this.src = './assets/media/user.jpg';" /> 
         <img class="editIcon" type="image" src="../assets/media/edit-icon.png" />   
     </div>
             
@@ -8,8 +8,8 @@
 
 <section class="email_container">
     <div class="email_element input_cover">
-        <input placeholder="test@alu.ulpgc.es" type="text"/>
-        <img src="../assets/media/edit-icon.png" />
+        <input placeholder="{{(profileData|async)?.email}}" type="text" [(ngModel)]="updatedEmail"  />
+        <img src="../assets/media/edit-icon.png" (click)="editEmail()"/>
     </div>
 </section>
 
