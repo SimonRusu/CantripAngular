@@ -32,7 +32,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   openSuccessDialog(): void{
-    const dialogRef = this.dialog.open(AlertModalComponent,
+    this.dialog.open(AlertModalComponent,
        {data: {dialogTitle: "Your email has been changed",
         dialogText: "you can log in now with "+this.updatedEmail,
         dialogIcon: "task_alt",
@@ -40,7 +40,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   openDismissDialog(error:string): void{
-    const dialogRef = this.dialog.open(AlertModalComponent,
+    this.dialog.open(AlertModalComponent,
        {data: {dialogTitle: "The operation could not be satisfied",
         dialogText: error,
         dialogIcon: "cancel",
@@ -57,7 +57,6 @@ export class ProfilePageComponent implements OnInit {
         this.openDismissDialog(err);
       }
        
-      
       )
     })
   }
