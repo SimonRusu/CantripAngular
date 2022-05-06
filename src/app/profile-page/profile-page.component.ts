@@ -11,12 +11,12 @@ import { ImageSelectorModalComponent } from '../image-selector-modal/image-selec
 })
 export class ProfilePageComponent implements OnInit {
 
-  profilePicture : Subject<string>;
+  profileData = new Observable<any>();
   constructor(public dialog: MatDialog, public fireAuth: FireAuthService) { 
   }
 
   ngOnInit(): void {
-    this.getProfilePicture();
+    this.profileData = this.fireAuth.getCurrentUser();
   }
 
   openDialog(): void{
@@ -24,16 +24,6 @@ export class ProfilePageComponent implements OnInit {
       {
         panelClass:"image-selector-dialog-container",
       });
-  }
-
-  getProfilePicture(): Observable<string>{
-    this.fireAuth.getCurrentUser().subscribe( data =>{
-      this.profilePicture.next(data.photoURL);
-      console.log(data.photoURL);
-    })
-    this.profilePicture.asObservable().subscribe(aa=>{console.log(aa)});
-  
-    return this.profilePicture.asObservable();
   }
   
 }

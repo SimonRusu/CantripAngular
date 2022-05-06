@@ -1,6 +1,6 @@
 <section class="profile_container">
-    <div class="imageContainer" (click)="openDialog()">
-        <img class ="userImage"src=""> 
+    <div  class="imageContainer" (click)="openDialog()">
+        <img class ="userImage" src={{(profileData|async).photoURL}} /> 
         <img class="editIcon" type="image" src="../assets/media/edit-icon.png" />   
     </div>
             
