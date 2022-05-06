@@ -4,12 +4,13 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Observable, Subject } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/fileUpload';
+import { FireAuthService } from './firestore/fire-auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class FileUploadService {
   private basePath = '/users';
-  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
+  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage, private fireAuth: FireAuthService) { }
   
   pushFileToStorage(fileUpload: FileUpload): Observable<string> {
     var subject = new Subject<string>();
@@ -18,9 +19,17 @@ export class FileUploadService {
     const uploadTask = this.storage.upload(filePath, fileUpload.file);
 
     uploadTask.snapshotChanges().pipe(
+      
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
+
+          this.fireAuth.getCurrentUser().subscribe(user => {
+            user.updateProfile({
+              photoURL: downloadURL,
+            })
+          })
           subject.next(downloadURL);
+          
         });
       })
     ).subscribe();

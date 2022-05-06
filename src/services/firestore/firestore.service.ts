@@ -34,6 +34,17 @@ export class FirestoreService {
     return this.firestore.collection('predefinedRoutes').add(data);
   }
 
+  public createContactForm(form: {
+    email: string,
+    firstName: { activityId: number },
+    lastName: { date: string },
+    messageText: number,
+    phoneNumber: number|null,
+  }) {
+    return this.firestore.collection('contactForms').add(form);
+  }
+
+
   public getRoute(documentId: string) {
     return this.firestore.collection('predefinedRoutes').doc(documentId).snapshotChanges();
   }
@@ -52,3 +63,4 @@ export class FirestoreService {
 
   }
 }
+

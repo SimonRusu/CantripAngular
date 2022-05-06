@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FireAuthService } from 'src/services/firestore/fire-auth.service';
 import { ImageSelectorModalComponent } from '../image-selector-modal/image-selector-modal.component';
 
 @Component({
@@ -9,11 +10,13 @@ import { ImageSelectorModalComponent } from '../image-selector-modal/image-selec
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { 
+  profileImage :string;
+  constructor(public dialog: MatDialog, public fireAuth: FireAuthService) { 
     
   }
 
   ngOnInit(): void {
+    this.getUserImage();
   }
 
   openDialog(): void{
@@ -22,6 +25,12 @@ export class ProfilePageComponent implements OnInit {
         panelClass:"image-selector-dialog-container",
       });
         
+  }
+
+  getUserImage(): void{
+    this.fireAuth.getCurrentUser().subscribe( user =>{
+      console.log(user);
+    })
   }
 
 }

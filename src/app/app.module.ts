@@ -93,7 +93,7 @@ AngularFireModule.initializeApp(environment.firebase);
     HttpClientModule
   ],
   providers: [
-    { provide: BUCKET, useValue: 'cantrip-angular' }
+    { provide: BUCKET, useValue: 'cantrip-3c78d.appspot.com' }
 
   ],
   bootstrap: [AppComponent]

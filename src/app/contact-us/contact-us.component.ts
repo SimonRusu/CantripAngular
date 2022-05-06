@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { FirestoreService } from 'src/services/firestore/firestore.service';
 import { AlertModalComponent } from '../alert-modal/alert-modal.component';
 @Component({
   selector: 'app-contact-us',
@@ -11,7 +12,7 @@ export class ContactUsComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog, public firestore: FirestoreService
   ) {}
 
   ngOnInit() {
@@ -31,7 +32,7 @@ export class ContactUsComponent implements OnInit {
         dialogText: "Your request has been submitted succesfully",
         dialogIcon: "task_alt",
         dialogIconColor: "green"}});
-    console.log(this.form.value);
+        this.firestore.createContactForm((this.form.value));
   }
 
   
