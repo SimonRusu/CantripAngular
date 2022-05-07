@@ -1,5 +1,4 @@
-
-  <div *ngIf="routeData; else empty">
+<div *ngIf="routeData; else empty">
       <h1 class="text-center">{{routeData.routeName}}</h1>
       <app-route-settings [numberOfPeople]="routeData.numberOfPeople" [date]="routeData.dateAvailability[0]" [startingTime]="routeData.startTime"></app-route-settings>
       <div class="route-container">
