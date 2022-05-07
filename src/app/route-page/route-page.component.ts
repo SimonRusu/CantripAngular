@@ -26,7 +26,7 @@ export interface Route {
 
 export class RoutePageComponent implements OnInit {
 
-  
+
 
 
   routeParams = this.route.snapshot.params['routeId'];
@@ -35,7 +35,7 @@ export class RoutePageComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private firestoreService: FirestoreService) {
-    
+
   }
 
 
@@ -43,5 +43,12 @@ export class RoutePageComponent implements OnInit {
     this.firestoreService.getRoute(this.routeParams).subscribe(route => {
       this.routeData = route.payload.data();
     })
+
+    if(!localStorage.getItem('reloaded')){
+      localStorage.setItem('reloaded', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('reloaded');
+    }
   }
 }
