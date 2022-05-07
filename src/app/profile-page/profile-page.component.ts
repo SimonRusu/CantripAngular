@@ -17,48 +17,60 @@ export class ProfilePageComponent implements OnInit {
   subject = new Subject<any>();
   updatedEmail: string;
 
-  constructor(public dialog: MatDialog, public fireAuth: FireAuthService) { 
+  constructor(public dialog: MatDialog, public fireAuth: FireAuthService) {
   }
 
   ngOnInit(): void {
     this.profileData = this.fireAuth.getCurrentUser();
   }
 
-  openImageDialog(): void{
+  openImageDialog(): void {
     const dialogRef = this.dialog.open(ImageSelectorModalComponent,
       {
-        panelClass:"image-selector-dialog-container",
+        panelClass: "image-selector-dialog-container",
       });
   }
 
-  openSuccessDialog(): void{
+  openSuccessDialog(): void {
     this.dialog.open(AlertModalComponent,
-       {data: {dialogTitle: "Your email has been changed",
-        dialogText: "you can log in now with "+this.updatedEmail,
-        dialogIcon: "task_alt",
-        dialogIconColor: "green"}});
+      {
+        data: {
+          dialogTitle: "Your email has been changed",
+          dialogText: "you can log in now with " + this.updatedEmail,
+          dialogIcon: "task_alt",
+          dialogIconColor: "green"
+        }
+      });
   }
 
-  openDismissDialog(error:string): void{
+  openDismissDialog(error: string): void {
     this.dialog.open(AlertModalComponent,
-       {data: {dialogTitle: "The operation could not be satisfied",
-        dialogText: error,
-        dialogIcon: "cancel",
-        dialogIconColor: "red"}});
+      {
+        data: {
+          dialogTitle: "The operation could not be satisfied",
+          dialogText: error,
+          dialogIcon: "cancel",
+          dialogIconColor: "red"
+        }
+      });
   }
 
 
-  editEmail(): void{
+  editEmail(): void {
     this.fireAuth.getCurrentUser().subscribe(user => {
       user.updateEmail(this.updatedEmail).then(() => {
         this.openSuccessDialog();
       })
-      .catch((err:any) =>{
-        this.openDismissDialog(err);
-      }
-       
-      )
+        .catch((err: any) => {
+          this.openDismissDialog(err);
+        }
+
+        )
     })
   }
-  
+
+  logout() {
+    this.fireAuth.SignOut();
+  }
+
 }

@@ -16,7 +16,7 @@ import {
 
 export class FirestoreService {
 
-  
+
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -38,7 +38,7 @@ export class FirestoreService {
     firstName: string,
     lastName: string,
     messageText: string,
-    phoneNumber: number|null,
+    phoneNumber: number | null,
   }) {
     return this.firestore.collection('contactForms').add(form);
   }
@@ -48,7 +48,7 @@ export class FirestoreService {
     return this.firestore.collection('predefinedRoutes').doc(documentId).snapshotChanges();
   }
 
-  public getActivitiesById(ids: []){
+  public getActivitiesById(ids: []) {
     return this.firestore.collection('routeActivities', ref => ref.where(documentId(), "in", ids)).valueChanges();
   }
 
