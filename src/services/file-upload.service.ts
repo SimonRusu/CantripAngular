@@ -10,7 +10,7 @@ import { FireAuthService } from './firestore/fire-auth.service';
 })
 export class FileUploadService {
   private basePath = '/users';
-  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage, private fireAuth: FireAuthService) { }
+  constructor(private storage: AngularFireStorage, private fireAuth: FireAuthService) { }
   
   pushFileToStorage(fileUpload: FileUpload): void {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
