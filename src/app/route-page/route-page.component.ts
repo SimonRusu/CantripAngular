@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import {FirestoreService} from "../../services/firestore/firestore.service";
 
 export interface Route {
-  routeId: number;
+  routeId: string;
   routeName: string;
   numberOfPeople: number;
   price: number;
@@ -44,8 +44,4 @@ export class RoutePageComponent implements OnInit {
       this.routeData = route.payload.data();
     })
   }
-
-
-
-
 }

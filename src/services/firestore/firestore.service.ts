@@ -28,7 +28,6 @@ export class FirestoreService {
     numberOfPeople: number,
     price: number,
     publishDate: string,
-    routeId: number,
     startTime: string
   }) {
     return this.firestore.collection('predefinedRoutes').add(data);
@@ -36,9 +35,9 @@ export class FirestoreService {
 
   public createContactForm(form: {
     email: string,
-    firstName: { activityId: number },
-    lastName: { date: string },
-    messageText: number,
+    firstName: string,
+    lastName: string,
+    messageText: string,
     phoneNumber: number|null,
   }) {
     return this.firestore.collection('contactForms').add(form);
@@ -58,8 +57,7 @@ export class FirestoreService {
   }
 
   public getRoutes() {
-    return this.firestore.collection('predefinedRoutes')
-      .valueChanges({ routeId: 'id' }) as Observable<Route[]>;
+    return this.firestore.collection('predefinedRoutes').snapshotChanges();
 
   }
 }

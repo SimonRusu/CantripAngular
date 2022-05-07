@@ -8,9 +8,9 @@
 <section class="outstanding-routes-container">
   <div *ngFor="let predefinedRoute of predefinedRoutes | async">
 
-    <app-card-predefined [numberOfPeople]="predefinedRoute.numberOfPeople" [price]="predefinedRoute.price"
-                         [routeName]="predefinedRoute.routeName" [thumbnailPath]="predefinedRoute.thumbnailPath"
-                         [routeId]="predefinedRoute.routeId">
+    <app-card-predefined [numberOfPeople]="predefinedRoute.payload.doc.data()['numberOfPeople']" [price]="predefinedRoute.payload.doc.data()['price']"
+                         [routeName]="predefinedRoute.payload.doc.data()['routeName']" [thumbnailPath]="predefinedRoute.payload.doc.data()['thumbnailPath']"
+                         [routeId]="predefinedRoute.payload.doc.id">
 
     </app-card-predefined>
 

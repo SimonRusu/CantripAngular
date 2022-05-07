@@ -13,14 +13,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.logged = this.checkLoggedIn();
-    console.log(this.logged)
   }
 
   checkLoggedIn(): boolean {
     this.fireAuth.checkLoggedIn();
     let dato = localStorage.getItem('user');
-    console.log("Aqui")
-    console.log(dato);
     if (dato !== "false") {
       console.log("logueado");
       return true;

@@ -10,9 +10,14 @@ export class CardPredefinedComponent implements OnInit {
   @Input() price !: number;
   @Input() thumbnailPath !: string;
   @Input() routeName !: string;
-  @Input() routeId !: number;
+  @Input() routeId !: string;
+
+
   constructor() {
+    
   }
+
+  
 
   ngOnInit(): void {
   }

@@ -39,7 +39,6 @@ export class TimetableComponent implements OnInit {
   }
     ngOnInit(): void {
       this.displayActivities = this.getActivitiesData();
-      this.displayActivities.subscribe(data=>{console.log(data)});
     }
 
     getActivitiesData(): Observable<Array<any>>{

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FirestoreService } from 'src/services/firestore/firestore.service';
+import { runInThisContext } from 'vm';
 import { Route } from '../route-page/route-page.component';
 
 import { RouteService } from '../route.service';
@@ -12,16 +13,15 @@ import { RouteService } from '../route.service';
   styleUrls: ['./predefined-routes-page.component.css']
 })
 export class PredefinedRoutesPageComponent implements OnInit {
-  predefinedRoutes: Observable<Route[]>;
+  predefinedRoutes: Observable<any>;
   constructor(private firestoreService: FirestoreService) { }
 
   ngOnInit(): void {
     this.getRoutes();
-
+    
   }
-  async getRoutes() {
-    this.predefinedRoutes = await this.firestoreService.getRoutes();
+  
+  getRoutes() {
+    this.predefinedRoutes = this.firestoreService.getRoutes()
   }
-
-
 }
