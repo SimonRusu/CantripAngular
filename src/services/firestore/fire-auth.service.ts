@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class FireAuthService {
   userData: Observable<any>;
 
-  constructor(private angularFireAuth: AngularFireAuth) {
+  constructor(private angularFireAuth: AngularFireAuth,private router: Router) {
   }
 
   async singUp(email: string, password: string) {
@@ -36,7 +37,7 @@ export class FireAuthService {
 
   SignOut() {
     this.angularFireAuth.signOut().then(() => {
-      window.location.reload();
+      this.router.navigate(['/home']);
     });
   }
 
